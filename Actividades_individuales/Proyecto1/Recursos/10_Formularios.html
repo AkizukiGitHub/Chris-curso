@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcos, Audio y Vídeo</title>
+    <meta name="keywords" content="HTML5, CSS3, Javascript" />
+    <meta name="author" content="Candy González" />
+  </head>
+  <body>
+    <section style="margin-left: 5%">
+      <header>
+        <h1>Formularios</h1>
+      </header>
+
+      <form action="" method="post">
+        <fieldset style="width: 50%">
+          <legend>Información Personal:</legend>
+          <label>Nombre: </label><input type="text" name="nom" /><br /><br />
+          <label>Apellidos: </label><input type="text" name="nom" /><br /><br />
+          <label>Password: </label
+          ><input type="password" name="psw" /><br /><br />
+          <label>CP: </label><input type="number" name="cp" /><br /><br />
+          <label>Color Favorito: </label
+          ><input type="color" name="favcolor" value="#ff0000" /><br /><br />
+          <label>Cumpleaños: </label
+          ><input type="date" name="bday" /><br /><br />
+          <label>Enail: </label><input type="email" name="email" /><br /><br />
+          <label>Foto: </label><input type="file" name="myFile" /><br /><br />
+          <label>Calificación: </label
+          ><input type="number" name="quantity" min="1" max="5" /><br /><br />
+          <label>Comentarios: </label
+          ><textarea rows="4" cols="16">Esto es una textarea.</textarea>
+          <h3>Radio</h3>
+          <input type="radio" name="gender" value="hombre" checked />
+          Hombre<br />
+          <input type="radio" name="gender" value="mujer" /> Mujer<br />
+          <input type="radio" name="gender" value="otro" /> Otro<br /><br />
+          <input type="radio" name="gender" value="no" /> Prefiero no decirlo<br /><br />
+
+          <h3>Select</h3>
+          <select name="movil">
+            <option value="iphone">Iphone</option>
+            <option value="samsung">Samsung</option>
+            <option value="huawei">Huawei</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <h3>CheckBox</h3>
+          <input type="checkbox" name="vehicle1" value="Coche" /> Tengo Coche<br />
+          <input type="checkbox" name="vehicle2" value="Carnet" /> Tengo Carnet
+          de Conducir<br /><br />
+
+          <input type="submit" value="Enviar" />
+        </fieldset>
+        <br />
+      </form>
+
+      <input
+        type="button"
+        onclick="alert('Esto es un input tipo botón')"
+        value="Input"
+      />
+      <button onclick="alert('Esto es un botón')">Botón</button>
+    </section>
+  </body>
+</html>
