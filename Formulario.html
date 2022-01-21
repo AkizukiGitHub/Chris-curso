@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+    <section style="margin-right: 5%;">
+    <header>
+            <h1 style="font-size: xx-large;">Formulario de registro</h1>
+        <form action="" method="post"> 
+            <label>Nombres: </label><input type="text" name="fname" /><br/><br/>
+            <label>Apellidos: </label><input type="text" name="lname"/><br/><br/>
+            <label>Sexo: </label>
+            <input type="radio" name="gender" value="hombre"/>
+            <label>Hombre</label>
+            <input type="radio" name="gender" value="mujer" checked/>
+            <label>Mujer</label><br/><br/>
+            <label>Correo:</label><input type="email" name="email" /><br/><br/>
+            <label>Poblacion:</label>
+            <select name="Poblacion">
+                <option value="S/C">Santa Cruz</option>
+                <option value="LL">La Laguna</option>
+                <option value="Otro">Otro</option>
+            </select><br/><br/>
+            <label>Descripccion</label><textarea rows="4" cols="16">Esto es una textarea.</textarea><br/><br/>
+
+            <input type="checkbox" name="condicion1" value="info"/>Deseo recibir informacion sobre novedades y ofertas <br/><br/>
+            <input type="checkbox" name="condicion2" value="TOS"/>Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre la proteccion de datos <br/><br/>
+
+            <input type="submit" value="Enviar"
+        </form>
+    </header>
+    </section>
+</body>
+</html>
