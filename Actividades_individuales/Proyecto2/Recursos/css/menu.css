@@ -1,0 +1,16 @@
+.grupos{
+    color: rgb(226, 58, 204);
+}
+.menus{
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
+.precios{
+    background-color:rgb(226, 58, 204) ;
+    color: rgb(255, 255, 255);
+}
+.menuEspecial{
+    font-family: JapaneseTourist;
+    src: url(Recursos/css/Japanese%20Tourist.otf);
+}
