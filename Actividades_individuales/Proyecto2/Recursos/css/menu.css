@@ -11,6 +11,6 @@
     color: rgb(255, 255, 255);
 }
 .menuEspecial{
-    font-family: JapaneseTourist;
-    src: url(Recursos/css/Japanese%20Tourist.otf);
+    font-family: Japanese Tourist;
+    src: url(https://raw.githubusercontent.com/AkizukiGitHub/Chris-curso/blob/main/Actividades_individuales/Proyecto2/Recursos/css/Japanese%20Tourist.otf) format('otf');
 }
