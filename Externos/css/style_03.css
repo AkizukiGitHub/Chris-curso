@@ -1,0 +1,143 @@
+/***********************************************************/
+/***              Estilos CSS                            ***/
+/***********************************************************/
+
+body {
+    background: #FFFFFF;
+    padding: 20px 30px;
+    margin: auto;
+    line-height:1.5;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+h1 {font-size: 36px}
+h2 {font-size: 30px}
+h3 {font-size: 24px}
+h4 {font-size: 20px}
+h5 {font-size: 18px}
+h6 {font-size: 16px}
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #333333;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+/* todos los ul dentro de nav, si fuese nav > ul serían solo los ul hijos directos del nav*/
+nav ul {                            
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+/* links */
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
+/* Tablas  */
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    caption-side: bottom;
+}
+
+th, td {
+    padding: 15px;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+/* Seudoelementos. https://www.w3schools.com/css/css_pseudo_elements.asp*/
+.pe::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+
+/* links con forma de botón*/
+.a1:link, .a1:visited {
+    background-color: #1C6EA4;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.a1:hover, .a1:active {
+    background-color: #175A86;
+}
+ 
+.image {max-width: 100%;height:auto}
+.opacity,.hover-opacity:hover {opacity: 0.50}
+
+div.ex1 {
+    width:500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+}
+
+div.ex2 {
+    max-width:500px;
+    margin: auto;
+    border: 3px solid #73AD21;
+}
+
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+
