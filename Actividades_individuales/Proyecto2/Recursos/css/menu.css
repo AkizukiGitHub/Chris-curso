@@ -1,16 +1,42 @@
+.titulo{
+    margin-left: 4%;
+    margin-right: 65%;
+    background-color: blue;
+    text-align: center;
+}
+.texto1{
+    font-size: 1em;
+    color: rgb(226, 58, 204);
+    margin-left: 2%;
+}
+.texto2{
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    margin-left: 2%;
+}
+.left{
+    margin-left: 6%;
+    margin-right: 55%;
+    background-color: blue;
+}
 .grupos{
     color: rgb(226, 58, 204);
+    font-size: 1.2em;
 }
-.menus{
-    
+.right{
+    margin-left: 55%;
+    margin-right: 6%;
+    background-color: blue;
+}
+.menus{ 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2em;
+    font-size: 1.6em;
+    text-align: center;
+}
+.subtitulo{
+    font-size: 1em;
 }
 .precios{
     background-color:rgb(226, 58, 204) ;
     color: rgb(255, 255, 255);
-}
-.menuEspecial{
-    font-family: Japanese Tourist;
-    src: url(https://raw.githubusercontent.com/AkizukiGitHub/Chris-curso/blob/main/Actividades_individuales/Proyecto2/Recursos/css/Japanese%20Tourist.otf) format('otf');
 }
