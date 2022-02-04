@@ -9,26 +9,25 @@
       var a;
       var b;
       var c;
-      
-      switch (
-        ((a = prompt("Ingrese el numero 1")),
-        (b = prompt("Ingrese el numero 2")),
-        (c = prompt("Ingrese el numero 3")))
-      ) {
-        case a > b && a > c:
-          document.write("A es la variable mayor");
-          break;
 
-        case a > b && a < c:
-          document.write("C es la variable mayor");
-          break;
+      var Ra; //Resultados de cada variable despues de coomparar
+      var Rb;
+      var Rc;
 
-        case b > a && b > c:
-          document.write("B es la variable mayor");
-          break;
+      a = prompt("Ingrese el numero 1");
+      b = prompt("Ingrese el numero 2");
+      c = prompt("Ingrese el numero 3");
+
+      Ra = a > b && a > c;
+      Rb = b > a && b > c;
+
+      if (Ra == true) {
+        document.write("A es la variable mayor");
+      } else if (Rb == true) {
+        document.write("B es la variable mayor");
+      } else{
+        document.write("C es la variable mayor");
       }
-
-      document.write(a,b,c)
     </script>
   </head>
   <body></body>
