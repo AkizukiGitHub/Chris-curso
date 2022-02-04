@@ -15,9 +15,10 @@
 
         edad=prompt("Edad:",0);
 
-        if(edad=>0&&edad<2){
+
+        if((edad>=0)&&(edad<2)){
             document.write('El pasajero paga :',precio*0,' Euros');
-        }else if(edad=>2&&edad<12){
+        }else if((edad>=2)&&(edad<12)){
             document.write('El pasajero paga :',precio*0.5,' Euros');
         }else{
             document.write('El pasajero paga :',precio,' Euros');
