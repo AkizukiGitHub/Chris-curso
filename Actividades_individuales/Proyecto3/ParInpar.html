@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var resultado;
+
+      n = prompt("Inserte un numero para saber si es par o inpar");
+
+      if (isNaN(n)) {
+          do{
+              n = prompt("Debe ser un numero para saber si es par o inpar");
+            }while(isNaN(n));
+      }
+      parseInt(n);
+
+      resultado = n % 2;
+
+      resultado==1?alert("El resultado es Inpar"):alert("El resultado es Par");
+    </script>
+  </head>
+  <body></body>
+</html>

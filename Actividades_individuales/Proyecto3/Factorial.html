@@ -7,29 +7,27 @@
     <title>Document</title>
 
     <script>
-        var factorial;
-        n = prompt("Ingrese un numero para sacar su factorial");
+      var factorial;
+      n = prompt("Ingrese un numero para sacar su factorial");
 
-      if(n<0){
-
-          do{
-              n = prompt("El numero ingresado debe ser igual o mayor que cero");
-            }while(n<0);
-        }
-        
-
-      if(n==0 || n==1){
-          document.write("La Factorial es igual a 1");
-      }else{
-
+      if (n < 0) {
+        do {
+          n = prompt("El numero ingresado debe ser igual o mayor que cero");
+        } while (n < 0);
       }
 
-      while(n=> 0){
-          factorial= n * n-1;
+      if (n == 0 || n == 1) {
+        document.write("La Factorial es igual a 1");
+      } else {
+        while (n >= 1) {
+          factorial = n * (n - 1);
           n--;
-      }
 
-      document.write(factorial);
+        }
+        document.write("La Factorial es igual a ");
+        document.writeln(factorial);
+        document.write(n);
+      }
     </script>
   </head>
   <body></body>
