@@ -42,8 +42,13 @@ function loteria() {
 }
 
 
+
+
+
+
+//problema si se da la palabra correcta en la ultima vuelta del bucle no hace la ultima verificacion
 function adivinaPalabra() {
-  var palabraOculta = prompt("ingresa la palabra a advinidar");
+  var palabraOculta = prompt("Ingresa la palabra a advinidar");
   var palabraIngresada = prompt("Adivina la palabra");
   intentos = 2;
   do {
@@ -54,7 +59,35 @@ function adivinaPalabra() {
     intentos--;
   } while (intentos > 0);
 
-  if (intentos == 0) {
+  
+  if (validacion != true) {
     alert("Mas suerte a la proxima! La palabra era:" + palabraOculta);
   }
 }
+
+
+
+
+
+
+function adivinaPalabra2() {
+    var palabraOculta = prompt("Ingresa la palabra a advinidar");
+    var palabraIngresada = prompt("Adivina la palabra");
+    var validacion;
+    var intentos = 2;
+  
+    do {
+      validacion = palabraIngresada == palabraOculta;
+      validacion
+        ? alert("Correcto!!")
+        : prompt("Incorrecto, te quedan " + intentos + " intentos");
+      intentos--;
+    } while (intentos > 0);
+  
+    validacion = palabraIngresada == palabraOculta;
+    if (validacion != true) {
+      alert("Mas suerte a la proxima! La palabra era:" + palabraOculta);
+    }else{
+        alert("Correcto!!")
+    }
+  }
