@@ -1,5 +1,5 @@
 function diccionario() {
-    var palabra = prompt("Inserte una Palabra", "Fajana");
+  var palabra = prompt("Inserte una Palabra", "Fajana");
 
   switch (palabra) {
     case "Guagua":
@@ -25,4 +25,36 @@ function diccionario() {
   }
 
   return def;
+}
+
+function loteria() {
+  var numeroIngresado = prompt(
+    "Inserte el numero de laloteria. Digito en 0 y 100"
+  );
+  var numeroGanador = Math.trunc(Math.random() * 100);
+  if (numeroGanador == numeroIngresado) {
+    alert("USTED ES EL GANADOR!!!");
+  } else {
+    alert("Mas suerte la proxima c:");
+  }
+
+  return numeroGanador;
+}
+
+
+function adivinaPalabra() {
+  var palabraOculta = prompt("ingresa la palabra a advinidar");
+  var palabraIngresada = prompt("Adivina la palabra");
+  intentos = 2;
+  do {
+    validacion = palabraIngresada == palabraOculta;
+    validacion
+      ? alert("Correcto!!")
+      : prompt("Incorrecto, te quedan " + intentos + " intentos");
+    intentos--;
+  } while (intentos > 0);
+
+  if (intentos == 0) {
+    alert("Mas suerte a la proxima! La palabra era:" + palabraOculta);
+  }
 }
