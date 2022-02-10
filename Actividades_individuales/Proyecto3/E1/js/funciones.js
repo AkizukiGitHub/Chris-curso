@@ -16,9 +16,6 @@ function PedirNumeroValido() {
     return x;
 }
 
-
-
-
 // Dados dos números a y b hallar el mayor. 
 function CoomparaPar() {
     var x = PedirNumeroValido();
@@ -101,11 +98,16 @@ function DeterminaMayorEdad() {
 // Imprimir los números del 1 a 200
 
 function ImprimeNumeros() {
-    acumulador=0;
-    for (let index = 0; index >199; index++) {
-        document.writeln(acumulador+",");
+    var acumulador=1;
+    var texto= 0 ;
+    var index = 0;
+    for (let index = 0; index <200; index++) {
+        texto = texto +acumulador+",";
         acumulador++;
     }
+    document.open();
+    document.writeln(texto);
+    document.close();
 }
 
 /* Dada la edad de un pasajero, saber si es bebé, niño o adulto para pagar un boleto aéreo, teniendo en cuenta que:
