@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Juega conmigo</title>
+    <script src="js/E2.js"></script>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .resultado {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Listado de Alumnos</h1>
+    <p>Dibuja una tabla dinámica de al menos 3 columnas (Nº, Apellidos,Nombre), para crear la lista de alumnos.</p>
+   
+      <label>Filas: </label>
+      <input type="number" id="n" > <br><br>
+      <label>Columnas: </label>
+      <input type="number" id="m" > 
+      <button id="btn1" onclick="Dibuja()">Dibujar</button> 
+   
+    <div id="Lista">
+        <p id="p01"></p>
+        <br>      
+        <hr>  
+        <br>
+    </div>
+
+    <h1>Par o multiplo de Tres</h1>
+    <p>Dado un número n determina si es par, en caso contrario di si es múltiplo de 3</p>
+   
+      <label>Número: </label>
+      <input type="number" id="num" > 
+      <button id="btn2" onclick="parMultiplo()">n!</button> 
+   
+    <div id="Resultado">
+        <p id="p02"></p>
+        <br>      
+        <hr>  
+        <br>
+    </div>
+
+    <h1>Capicúa</h1>
+    <p>Dado un número determina si es capicúa</p>
+    <div id="form"> 
+      <label>Palabra: </label>
+      <input type="text" id="numCapicua" > 
+      <button id="btn3" onclick="esCapicua()">¿Palíndromo?</button> 
+    </div>
+    <div id="Capicua">
+        <p id="p03"></p>
+        <br>      
+        <hr>  
+        <br>
+    </div>
+
+   
+</body>
+</html>
