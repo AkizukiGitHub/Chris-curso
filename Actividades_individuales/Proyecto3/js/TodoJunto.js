@@ -45,7 +45,10 @@ function ArrayCoordenadas()  {
     var repeticion = new Array(10);
     for (let index = 0; index < repeticion.length; index++) {
         repeticion[index]="c0"+(index+1);
-    }+
+        if(index==9){
+            repeticion[index]="c"+(index+1);
+        }
+    }
     console.log(repeticion);
     return repeticion;
 }
