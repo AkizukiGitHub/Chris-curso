@@ -45,23 +45,22 @@ const coche={Marca : undefined,Modelo : undefined,Matricula : undefined,Color : 
 //     document.write("</table>");
 //     console.log(x);}}
 
-const clienteBanco01 ={cuenta:[0001,"Ahorro","2000€"],DNI : "12345678A",Nombre : "Chris",Apellido : "Gomez", Edad : "21",MuestraListaCuentas: function (this.cuenta[]) {
-    x=cuenta;
-    document.write("<table border=1>");
-    for (let index = 0; index < x.length/3; index++) {
-        document.write("<tr>");
-        for(let j = index*3; j < index * 3 + 3; j++){
-            document.write("<td>");
-            document.write(x[j]);
-            document.write("</td>");
-        }
-        document.write("</tr>");
-    }
-    document.write("</table>");
-    console.log(x);}}
+// const clienteBanco01 ={cuenta:[0001,"Ahorro","2000€"],DNI : "12345678A",Nombre : "Chris",Apellido : "Gomez", Edad : "21",MuestraListaCuentas: function (this.cuenta[]) {
+//     x=cuenta;
+//     document.write("<table border=1>");
+//     for (let index = 0; index < x.length/3; index++) {
+//         document.write("<tr>");
+//         for(let j = index*3; j < index * 3 + 3; j++){
+//             document.write("<td>");
+//             document.write(x[j]);
+//             document.write("</td>");
+//         }
+//         document.write("</tr>");
+//     }
+//     document.write("</table>");
+//     console.log(x);}}
 
-
-
+//usar return en vez de document write
 
 // Piensa en una ferretería, crea un objeto producto con las propiedades o atributos que consideres necesarios para poder realizar en el futuro un software de inventario. Incluye un método para dibujar una tabla dinámica  capaz de incluir una lista de precios. 
 
