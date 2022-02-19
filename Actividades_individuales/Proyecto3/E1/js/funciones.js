@@ -101,11 +101,13 @@ function DeterminaMayorEdad() {
 // Imprimir los números del 1 a 200
 
 function ImprimeNumeros() {
-    acumulador=0;
+    var acumulador=0;
+    var ListaNumeros;
     for (let index = 0; index >199; index++) {
-        document.writeln(acumulador+",");
+        ListaNumeros = (acumulador+",");
         acumulador++;
     }
+    return ListaNumeros;
 }
 
 /* Dada la edad de un pasajero, saber si es bebé, niño o adulto para pagar un boleto aéreo, teniendo en cuenta que:
