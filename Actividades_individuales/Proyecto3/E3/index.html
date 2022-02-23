@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Alumnos</title>
+    <script src="js/index.js"></script>
+    <!-- Descripción de la práctica
+La tercera práctica para evaluar consiste en elaborar un formulario que recoja la información de los alumnos a partir de los supuestos prácticos planteados a continuación:
+
+Para la realización de esta prueba tendrás que realizar el html y el script de Js apropiado para el siguiente problema:
+
+Opcional: Incluye un botón para calcular las definitivas de los alumnos, sabiendo que la nota de progreso es (E1+E2+E3)/3)*0.3  mas la nota de la evaluación final (PO*0.2)+(PP*0.8) me dará la definitiva
+
+Opcional: Muestra la lista de alumnos ordenadas por la mayor nota en una tabla
+Recuerda documentar tu código con el uso de comentarios, utiliza un archivo Js externo para colocar tus funciones. Valida la entrada de datos en la medida de lo posible. La limpieza y organización del código serán valoradas.
+
+nombres la carpeta de tu proyecto  MF1_UF2_E3_tuNombre, por ejemplo: MF1_UF2_E3_Candy -->
+
+
+</head>
+<body>
+    <form action="" method="post">
+        <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Doe" required>
+        <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Jhon" required>
+        <label for="">DNI</label><input type="text" name="DNI" 
+        id="inp03" placeholder="12345678A" required>
+        <hr>
+        <label for="">Nota E1</label><input type="number" name="E1" id="inp04" placeholder="10" min="0" max="10" onchange="validar(3)">
+        <label for="">Nota E2</label><input type="number" name="E2" id="inp05"  placeholder="10" min="0" max="10" onchange="validar(4)">
+        <label for="">Nota E3</label><input type="number" name="E3" id="inp06"  placeholder="10" min="0" max="10" onchange="validar(5)">
+        <br>
+        <label for="">Nota PO</label><input type="number" name="PO" id="inp07"  placeholder="10" min="0" max="10" onchange="validar(6)">
+        <label for="">Nota PP</label><input type="number" name="PP" id="inp08"  placeholder="10" min="0" max="10" onchange="validar(7)">
+    </form>
+<button onclick="registrar()">Registra</button>
+
+<p id="p01"></p>
+
+<button onclick="MuestraListaAlumnos(alumnos)">Muestrame la Lista</button>
+<p id="p02"></p>
+
+<form action="" method="post">
+    <label for="">Filas</label><input type="number" name="filas"
+    id="n" placeholder="5" min="0">
+    <label for="">Columnas</label><input type="number"
+    name="Columnas" id="m" placeholder="5" min="1" max="8">      
+</form>
+<button onclick="Dibuja()">Dibuja lista</button>
+<button onclick="ordenaApellidos(),Dibuja()">Dibuja lista ordenada por Apellido</button>
+<button onclick="ordenaNota(),Dibuja()">Dibuja lista ordenada por Nota</button>
+<p id="p03"></p>
+
+</body>
+</html>
+
+
+
+
