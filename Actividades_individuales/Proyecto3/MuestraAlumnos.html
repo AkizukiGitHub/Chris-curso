@@ -25,6 +25,7 @@
     
     <button onclick="MuestraListaAlumnos(alumnos)">Muestrame la Lista</button>
     <p id="p02"></p>
+
    <script>
       //Declaración de variables
        var y=document.getElementsByTagName("input");  //Crea un array con todos los input 
@@ -74,12 +75,12 @@
                     lista += alumno[iterator];
                     lista += "</td>";
                     console.log(iterator);
-                }
+                  }
             });
             lista += "</tr>";
             lista += "</table>";
             document.getElementById("p02").innerHTML = lista;
-            }
+          }
    </script>
 
 </body>
