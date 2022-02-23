@@ -5,15 +5,16 @@ var j=0;
 var lista;
 
 class alumno {
-      constructor(n,a,id,e1,e2,e3,po,pp) {
-        this.nombre = n;
+      constructor(a,n,id,e1,e2,e3,po,pp) {
         this.apellido= a;
+        this.nombre = n;
         this.dni= id;
         this.e1=e1;
         this.e2=e2;
         this.e3=e3;
         this.po=po;
         this.pp=pp;
+        this.nd=((e1+e2+e3)/3)*0.3+(po*0.2)+(pp*0.8);
       }
     }
 
@@ -109,4 +110,32 @@ function Dibuja() {
     }
     lista += "</table>";
     document.getElementById("p03").innerHTML = lista;
-}  
+}
+function ordenaApellidos() {
+    alumnos.sort((a,b) => {
+        let fa = a.apellido.toLowerCase(),
+            fb = b.apellido.toLowerCase();
+    
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+    });
+}
+function ordenaNota() {
+    alumnos.sort((a,b) => {
+        let fa = a.nd,
+            fb = b.nd;
+    
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+    });
+}

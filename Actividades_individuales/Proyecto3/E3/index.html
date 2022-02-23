@@ -11,10 +11,6 @@ La tercera práctica para evaluar consiste en elaborar un formulario que recoja 
 
 Para la realización de esta prueba tendrás que realizar el html y el script de Js apropiado para el siguiente problema:
 
-Opcional: crea una función o método que dibuje una tabla dinámica a partir de los números n y m (filas y columnas) pedidos en el formulario, para mostrar la lista de alumnos con sus notas
-
-Opcional: Ordena a los alumnos alfabéticamente antes de mostrar la lista por pantalla
-
 Opcional: Incluye un botón para calcular las definitivas de los alumnos, sabiendo que la nota de progreso es (E1+E2+E3)/3)*0.3  mas la nota de la evaluación final (PO*0.2)+(PP*0.8) me dará la definitiva
 
 Opcional: Muestra la lista de alumnos ordenadas por la mayor nota en una tabla
@@ -52,6 +48,8 @@ nombres la carpeta de tu proyecto  MF1_UF2_E3_tuNombre, por ejemplo: MF1_UF2_E3_
     name="Columnas" id="m" placeholder="5" min="1" max="8">      
 </form>
 <button onclick="Dibuja()">Dibuja lista</button>
+<button onclick="ordenaApellidos(),Dibuja()">Dibuja lista ordenada por Apellido</button>
+<button onclick="ordenaNota(),Dibuja()">Dibuja lista ordenada por Nota</button>
 <p id="p03"></p>
 
 </body>
