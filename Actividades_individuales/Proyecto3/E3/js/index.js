@@ -49,12 +49,11 @@ function MuestraListaAlumnos(alumnos) {
 function Dibuja() {
     var n = parseInt(document.getElementById("n").value);
     var m = parseInt(document.getElementById("m").value);
-    //Solicito los dos valores, filas elemento N y Columnas elemento M 
+    //Solicito los dos valores, filas elemento N y Columnas elemento M
     var lista;
     var vueltasN = 0;
     var vueltasM = 0;
 
-    //se inicia la tablasa colocando los encabezados que siempre esta ahi por prerequisito con sus 3 columnas
     lista = "<table border=1>";
     switch (m) {
         case 1:
@@ -91,9 +90,6 @@ function Dibuja() {
         m=8;
     }
     for (const objAlumno of alumnos ) {
-        console.log("entra en el for each")
-        console.log(objAlumno)
-        //el bucle va ingresando filas segun el numero N ingresado
         if (vueltasN==n) {
             break;
         }
@@ -102,7 +98,6 @@ function Dibuja() {
             lista += "<td>";
             lista += objAlumno[iterator];
             lista += "</td>";
-            console.log(iterator,objAlumno[iterator])
             vueltasM++
             if (vueltasM==m) {
                 vueltasM=0;
@@ -113,6 +108,5 @@ function Dibuja() {
         vueltasN++;
     }
     lista += "</table>";
-    //se cierra y envia al elemento p01 el string con toda los tags que conforman la tabla anidados
     document.getElementById("p03").innerHTML = lista;
 }  
