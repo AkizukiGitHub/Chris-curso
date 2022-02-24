@@ -19,3 +19,9 @@ class pintura{
 function calcularIGIC(x) {
   return x * 0,07;
 }
+function MuestraDatosTarjeta() {
+    document.getElementById("Datos Tarjeta").style.display="block";
+}
+function OcultaDatosTarjeta() {
+    document.getElementById("Datos Tarjeta").style.display="none";
+}

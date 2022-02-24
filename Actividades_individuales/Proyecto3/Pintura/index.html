@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Pintura</title>
+    <script src="js/pintura.js"></script>
 </head>
 <body>
-    
+    <form action="" method="post">
+        <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Doe" required>
+        <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Jhon" required>
+        <label for="">DNI</label><input type="text" name="DNI" 
+        id="inp03" placeholder="12345678A" required>
+        <br><br>
+        <label for="Metodo de Pago">Metodo de Pago:</label>
+        <br>
+        <input type="radio" id="Efectivo" name="metodo" id="inp04" value="Efectivo" onclick="OcultaDatosTarjeta()">
+        <label for="Efectivo">Efectivo</label><br>
+        <input type="radio" id="Tarjeta" name="metodo" id="inp05" value="Tarjeta" onclick=MuestraDatosTarjeta()>
+        <label for="Tarjeta">Tarjeta</label><br>
+        <div id="Datos Tarjeta" style="display: none;">
+            <form action="" method="post">
+                <label for="">Numero Tarjeta:</label><input type="text" name="numTarjeta" id="inp07">
+                <br>
+                <label for="">Fecha Vencimiento:</label><input type="text" name="fechaTarjeta" id="inp08" placeholder="01/22">
+                <br>
+                <label for="">Codigo Secreto:</label><input type="text" name="codigoTarjeta" id="inp09">
+            </form>
+        </div>
+        <label for="">Direccion:</label><textarea name="Direccion" id="inp06" rows="5" cols="20">Ejemplo: Av. Reyes Catolicos, 4, Local 16, 38007 Santa Cruz de Tenerife</textarea>
+    </form>
+<button onclick=""></button>
 </body>
 </html>
