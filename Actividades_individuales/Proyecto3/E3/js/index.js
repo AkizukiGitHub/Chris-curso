@@ -14,7 +14,7 @@ class alumno {
         this.e3=e3;
         this.po=po;
         this.pp=pp;
-        this.nd=((e1+e2+e3)/3)*0.3+(po*0.2)+(pp*0.8);
+        this.nd=(((e1+e2+e3)/3)*0.3)+(((po*0.2)+(pp*0.8))*0.7);
       }
     }
 
