@@ -8,29 +8,43 @@
     <script src="js/pintura.js"></script>
 </head>
 <body>
+    <h1>Dator Personales:</h1>
     <form action="" method="post">
-        <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Doe" required>
-        <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Jhon" required>
-        <label for="">DNI</label><input type="text" name="DNI" 
-        id="inp03" placeholder="12345678A" required>
-        <br><br>
-        <label for="Metodo de Pago">Metodo de Pago:</label>
-        <br>
-        <input type="radio" id="Efectivo" name="metodo" id="inp04" value="Efectivo" onclick="OcultaDatosTarjeta()">
-        <label for="Efectivo">Efectivo</label><br>
-        <input type="radio" id="Tarjeta" name="metodo" id="inp05" value="Tarjeta" onclick=MuestraDatosTarjeta()>
-        <label for="Tarjeta">Tarjeta</label><br>
-        <div id="Datos Tarjeta" style="display: none;">
-            <form action="" method="post">
-                <label for="">Numero Tarjeta:</label><input type="text" name="numTarjeta" id="inp07">
-                <br>
-                <label for="">Fecha Vencimiento:</label><input type="text" name="fechaTarjeta" id="inp08" placeholder="01/22">
-                <br>
-                <label for="">Codigo Secreto:</label><input type="text" name="codigoTarjeta" id="inp09">
-            </form>
-        </div>
-        <label for="">Direccion:</label><textarea name="Direccion" id="inp06" rows="5" cols="20">Ejemplo: Av. Reyes Catolicos, 4, Local 16, 38007 Santa Cruz de Tenerife</textarea>
+        <fieldset>
+            <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Doe" required>
+            <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Jhon" required>
+            <br><br>
+            <label for="">DNI</label><input type="text" name="DNI" 
+            id="inp03" placeholder="12345678A" required>
+            <br><br>
+            <label for="Metodo de Pago">Metodo de Pago:</label>
+            <br>
+            <input type="radio" id="Efectivo" name="metodo" id="inp04" value="Efectivo" onclick="OcultaDatosTarjeta()">
+            <label for="Efectivo">Efectivo</label><br>
+            <input type="radio" id="Tarjeta" name="metodo" id="inp05" value="Tarjeta" onclick=MuestraDatosTarjeta()>
+            <label for="Tarjeta">Tarjeta</label><br>
+            <div id="Datos Tarjeta" style="display: none;">
+                <form action="" method="post">
+                    <label for="">Numero Tarjeta:</label><input type="text" name="numTarjeta" id="inp07">
+                    <br>
+                    <label for="">Fecha Vencimiento:</label><input type="text" name="fechaTarjeta" id="inp08" placeholder="01/22">
+                    <br>
+                    <label for="">Codigo Secreto:</label><input type="text" name="codigoTarjeta" id="inp09">
+                </form>
+            </div>
+            <label for="">Direccion:</label><textarea name="Direccion" id="inp06" rows="5" cols="20">Ejemplo: Av. Reyes Catolicos, 4, Local 16, 38007 Santa Cruz de Tenerife</textarea>
+        </fieldset>
+        </form>
+    <br>
+<button onclick="">Valida mis datos</button>
+
+<div id="Productos" style="display: none;">
+    <h1>Producto Disponibles</h1>
+    <form action="" method="post">
+        <fieldset>
+            
+        </fieldset>
     </form>
-<button onclick=""></button>
+</div>
 </body>
 </html>
