@@ -9,21 +9,12 @@ class alumno {
         this.apellido= a;
         this.nombre = n;
         this.dni= id;
-<<<<<<< HEAD
-        this.e1=e1;
-        this.e2=e2;
-        this.e3=e3;
-        this.po=po;
-        this.pp=pp;
-        this.nd=(((e1+e2+e3)/3)*0.3)+(((po*0.2)+(pp*0.8))*0.7);
-=======
         this.e1=parseInt(e1);
         this.e2=parseInt(e2);
         this.e3=parseInt(e3);
         this.po=parseInt(po);
         this.pp=parseInt(pp);
-        this.nd=((e1+e2+e3)/3)*0.3+((po*0.2)+(pp*0.8));
->>>>>>> 1582d39974f04873d0027a4b8ab0ca7864a2766b
+        this.nd=(((this.e1+this.e2+this.e3)/3)*0.3)+(((this.po*0.2)+(this.pp*0.8))*0.7);
       }
     }
 
@@ -139,11 +130,11 @@ function ordenaNota() {
         let fa = a.nd,
             fb = b.nd;
     
-        if (fa > fb) {
-            return -1;
-        }
         if (fa < fb) {
             return 1;
+        }
+        if (fa > fb) {
+            return -1;
         }
         return 0;
     });
