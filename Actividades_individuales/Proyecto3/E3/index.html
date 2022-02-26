@@ -10,11 +10,13 @@
 </head>
 <body>
     <form action="" method="post">
-        <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Doe" required>
-        <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Jhon" required>
+        <!-- creo un formulario pidiendo los datos del alumno -->
+        <label for="">Apellido</label><input type="text" name="apellido" id="inp01"  placeholder="Gonzales" required>
+        <label for="">Nombre</label><input type="text" name="nombre" id="inp02"  placeholder="Antonio" required>
         <label for="">DNI</label><input type="text" name="DNI" 
         id="inp03" placeholder="12345678A" required>
         <hr>
+        <!-- en la parte de las notas coloco un minimo y un maximo para que el slider del campo no exceda el rango permitido, aun asi el usuario ingresa un valro por fuera del rango permitido la funcion verificar mostrara un mensaje en el documento -->
         <label for="">Nota E1</label><input type="number" name="E1" id="inp04" placeholder="10" min="0" max="10" onchange="validar(3)">
         <label for="">Nota E2</label><input type="number" name="E2" id="inp05"  placeholder="10" min="0" max="10" onchange="validar(4)">
         <label for="">Nota E3</label><input type="number" name="E3" id="inp06"  placeholder="10" min="0" max="10" onchange="validar(5)">
@@ -22,22 +24,27 @@
         <label for="">Nota PO</label><input type="number" name="PO" id="inp07"  placeholder="10" min="0" max="10" onchange="validar(6)">
         <label for="">Nota PP</label><input type="number" name="PP" id="inp08"  placeholder="10" min="0" max="10" onchange="validar(7)">
     </form>
+<!-- se registra el alumno tomando todos los datos de formulario metiendolo en un objeto alumno y ese objeto en un array con la funcion registrar -->
 <button onclick="registrar()">Registra</button>
-
 <p id="p01"></p>
 
+<!-- Esta boton y parrado no es realmente parte del ejercicio pero sirve para visualizar todo el array alumnos y coomparar con lo que se muestra debajo una vez alterado su orden -->
 <button onclick="MuestraListaAlumnos(alumnos)">Muestrame la Lista</button>
 <p id="p02"></p>
 
+<!-- En esta parte tienes 3 botones y formulario, el formulario delimita cuantos columnas y filas quieres ver de la tabla alumnos por valor defecto las colummnas tienen un valor por defecto de 8 asi que mostrara todo los campos de un alumno menos la nota final que es un campo meramente para el calculo -->
 <form action="" method="post">
     <label for="">Filas</label><input type="number" name="filas"
     id="n" placeholder="5" min="0">
     <label for="">Columnas</label><input type="number"
-    name="Columnas" id="m" placeholder="5" min="1" max="8">      
+    name="Columnas" id="m" placeholder="8" min="1" max="8">      
 </form>
 <button onclick="Dibuja()">Dibuja lista</button>
+<!-- dibuja lista muestra los campos del array alumnos segun el numero de campos ingresado en formulario -->
 <button onclick="ordenaApellidos(),Dibuja()">Dibuja lista ordenada por Apellido</button>
+<!--OrdenaApellidos ordena la lista segun el atributo apellido y dibuja lista muestra los campos del array alumnos segun el numero de campos ingresado en formulario -->
 <button onclick="ordenaNota(),Dibuja()">Dibuja lista ordenada por Nota</button>
+<!-- OrdenaNota ordena la lista segun el atributo nd que es el calculo de la nota final y dibuja lista muestra los campos del array alumnos segun el numero de campos ingresado en formulario --> 
 <p id="p03"></p>
 
 </body>
