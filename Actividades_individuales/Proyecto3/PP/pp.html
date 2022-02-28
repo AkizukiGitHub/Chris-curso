@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Juega conmigo</title>
+    <script src="js/misFunciones.js"></script>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .resultado {
+            color: white;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Registrar usuario</h1>
+    <p>Rellena el formulario y presiona el botón para poder registrarte.</p>
+    <form action="" method="post" name="clienteForm">
+      <label>Nombre: </label>
+      <input type="text" id="nombre" name="nombre" > 
+      <label>Apellidos: </label>
+      <input type="text" id="apellidos" name="apellidos" > 
+      <label>DNI: </label>
+      <input type="text" id="dni" name="dni" > 
+      <label>Email: </label>
+      <input type="text" id="email" name="email" > 
+    </form>     
+    <button id="btn1" onclick="registrarCliente()">Registro</button> 
+   
+    <div id="clientesRegistrado">
+        <p id="clientes"></p>
+        <br>      
+        <hr>  
+        <br>
+    </div>
+
+   
+</body>
+</html>
