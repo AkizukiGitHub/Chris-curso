@@ -25,7 +25,10 @@ Coloca en el cuerpo de la página algunos de los ejercicios que hemos realizado,
     </form>
     <?php
     if (isset($_POST["submit"])) {
-        if (empty($_POST["num01"]) && (empty($_POST["num02"]) && empty($_POST["num03"]))) {
+        if (1!=empty($_POST["num01"]) && 1!=empty($_POST["num02"]) && 1!=empty($_POST["num03"])) {
+            echo empty($_POST["num01"]);
+            echo empty($_POST["num02"]);
+            echo empty($_POST["num03"]);
             $a; //Valor inicial
             $b;
             $c;
@@ -53,7 +56,7 @@ Coloca en el cuerpo de la página algunos de los ejercicios que hemos realizado,
         } else {
             echo "Rellene todos los campos para coomprobar cual es mayor";
         };
-    }
+    };
 
     ?>
     <?php include("php/footer.php"); ?>
