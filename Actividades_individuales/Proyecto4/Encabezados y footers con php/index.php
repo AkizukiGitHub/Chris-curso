@@ -4,6 +4,7 @@ Coloca en el cuerpo de la página algunos de los ejercicios que hemos realizado,
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,36 +12,51 @@ Coloca en el cuerpo de la página algunos de los ejercicios que hemos realizado,
     <link rel="stylesheet" href="css/act.css">
     <title>Document</title>
 </head>
+
 <body>
-<header id="header">
-	<nav class="links" style="--items: 5;">
-		<a href="#">Link 1</a>
-		<a href="#">Link 2</a>
-		<a href="#">Link 3</a>
-		<a href="#">Link 4</a>
-		<a href="#">Link 5</a>
-		<span class="line"></span>
-	</nav>
-</header>
+    <form action="" method="post">
+        <label for="">Introduce el Primer numero= </label>
+        <input type="number" name="num01" /><br>
+        <label for="">Introduce el Segundo numero= </label>
+        <input type="number" name="num02" /><br>
+        <label for="">Introduce el Tercer numero= </label>
+        <input type="number" name="num03" /><br>
+        <input type="submit" name="submit" value="Mayor">
+    </form>
+    <?php
+    if (isset($_POST["submit"])) {
+        if (empty($_POST["num01"]) && (empty($_POST["num02"]) && empty($_POST["num03"]))) {
+            $a; //Valor inicial
+            $b;
+            $c;
+            $Ra; //Resultados de cada variable despues de coomparar
+            $Rb;
+            $Rc;
 
-<div class="content">
-	<strong>Pros</strong>
-	<ul>
-		<li>It's pure CSS.</li>
-	</ul>
-	<strong>Cons</strong>
-	<ul>
-		<li>It's pure CSS.</li>
-		<li>All links need to have a consistent dimensions for this to work</li>
-		<li>You have to set everything up yourself in terms of telling the nav how many items there are and where the <code>.line</code> should move to whenever one of the links gets hovered.</li>
+            $a = $_POST["num01"];
+            $b = $_POST["num02"];
+            $c = $_POST["num03"];
 
-	</ul>
-	<strong>Notes</strong>
-	<ul>
-		<li>This uses Custom Properties, Calc, and Grid.</li>
-		<li>While I couldn't find an easier way to make the line work with unevenly sized links, I tried my best to compensate for it by including the <code>--width</code> and <code>--left</code> custom properties, both of which would take priority over the current setup should either be defined.</li>
-	</ul>
-</div>
+            $Ra = $a > $b && $a > $c;
+            $Rb = $b > $a && $b > $c;
+            $Rc = $c > $a && $c > $b;
+
+            if ($Ra == true) {
+                echo "A es la variable mayor, con un valor de " . $a;
+            } else if ($Rb == true) {
+                echo "B es la variable mayor, con un valor de " . $b;
+            } elseif ($Rc == true) {
+                echo "C es la variable mayor, con un valor de " . $c;
+            } else {
+                echo "No hay un numero unico que sea mayor";
+            }
+        } else {
+            echo "Rellene todos los campos para coomprobar cual es mayor";
+        };
+    }
+
+    ?>
+    <?php include("php/footer.php"); ?>
 </body>
-</html>
 
+</html>
