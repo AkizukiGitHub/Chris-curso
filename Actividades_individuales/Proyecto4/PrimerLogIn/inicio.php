@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
     <h1>Registrate aqui.</h1>
-    <form action="" method="post">
+    <form action="LogIn.php" method="post">
         <label for="">Usuario</label>
         <input type="text" name="user" required>
         <br>
