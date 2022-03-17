@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
     <h1>Registrate aqui.</h1>
-    <form action="LogIn.php" method="post">
+    <form action="" method="post">
         <label for="">Usuario</label>
         <input type="text" name="user" required>
         <br>
