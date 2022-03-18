@@ -55,7 +55,7 @@ if (isset($_POST["btn1"])) {
             <label><strong>Cantidad de comensales</strong></label>
             <input type="number" name="cantC" required>
             <br>
-            <input type="submit" name="submit" value="Enviar" onclick="factura()">
+            <input type="submit" name="submit" value="Enviar">
         </form>
 </fieldset>
 <p id="p01"></p>
