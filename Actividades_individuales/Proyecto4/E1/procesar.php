@@ -13,10 +13,12 @@ Crea al menos 2 páginas una de inicio y  una de contacto con la dirección de l
 Recuerda hacer uso del include y las sesiones 
 -->
 <?php
+session_start();
 include("includes/encabezado.php");
 include("includes/menu.php");
 if (isset($_POST["btn1"])) {
     $nombre = $_POST["nombre"];
+    $_SESSION["usuario"]=$nombre;
     echo "<h2>Le damos la bienvenida $nombre </h2>";
 }
 ?>
@@ -42,7 +44,7 @@ if (isset($_POST["btn1"])) {
 </fieldset>
 <fieldset id="form2" style="visibility: hidden; margin-left: 2%;">
     <legend><strong>Solicitud de Presupuesto</strong></legend>
-        <form action="" method="post" display="hidden">
+        <form action="procesada.php" method="post" display="hidden">
             <label><strong>Menu 1</strong></label>
             <input type="radio" name="menu" value="1">
             <br>
