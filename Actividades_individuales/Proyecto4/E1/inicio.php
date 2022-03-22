@@ -17,8 +17,8 @@ include("includes/encabezado.php");
 include("includes/menu.php");
 ?>
 <form action="procesar.php" method="post" name="form1">
-<label>nombre:</label><input type="text" name="nombre" required>
-<label>contraseña:</label><input type="password" name="pass" required>
+<label>nombre:</label><input type="text" name="nombre" required><br>
+<label>contraseña:</label><input type="password" name="pass" required><br>
 <input type="submit" name="btn1" value="Registro">
 </form>
 
