@@ -61,29 +61,29 @@ if (isset($_GET["btn1"])) {
             ->setIBAN($_GET["IBAN"]));
 }
 
+var_dump($_SESSION);
+}
 if(isset($_GET["btn2"])){
     if(empty($_SESSION["objetos"])) {
-        echo "No hay cientes registrados";
-    }else{
-        foreach ($_SESSION["objetos"] as $cuenta) {
-            if(($cuenta->getDNI()==$_GET["DNI"])){
+        echo "No hay cientes registrados".PHP_EOL."\n";
+        if(($cuenta->getDNI()==$_GET["DNI"])){
 
-            }
         }
+    }else{
         echo "<table border=1>";
-        foreach($_SESSION["objetos"] as $cuenta){
+        foreach($_SESSION["objetos"] as $value=>$cuenta){
             echo "<tr>";
             echo "<td>".$cuenta->getNombre(). "</td>";
             echo "<td>".$cuenta->getApellidos(). "</td> ";
             echo "<td>".$cuenta->getDNI(). "</td> ";
             echo "<td>".$cuenta->getIBAN(). "</td> ";
+            echo "<td>".$value. "</td> ";
             echo "</tr>";
         }
         echo "</table>";
     }
+    var_dump($_SESSION);
 }
-var_dump($_SESSION);
-} 
 
 
 ?>
