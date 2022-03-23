@@ -50,6 +50,7 @@ class Cuenta extends Cliente{
 }
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
