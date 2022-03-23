@@ -71,7 +71,7 @@ if(empty($_SESSION["objetos"])){
         array_push($_SESSION["objetos"], new Persona($_GET["nombre"],$_GET["apellidos"],$_GET["dni"],$_GET["movil"],$_GET["email"],$_GET["edad"],$_GET["vivo"]));        
            
      }
-     echo "<table border=1>";
+    echo "<table border=1>";
     foreach($_SESSION["objetos"] as $cajita){
         echo "<tr>";
         echo "<td>".$cajita->get_nombre(). "</td>";
