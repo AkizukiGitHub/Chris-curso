@@ -6,11 +6,17 @@ Además le solicita el número de comensales y proporciona un descuento del 10% 
 Por último presenta un presupuesto que incluye un coste del 15% por el servicio de camareros y un IGIC del 7% con el total del evento. -->
 <?php
     if (isset($_POST["submit"])) {
+        //ocurrirá cuando se haya enviado el formulario 
         $descuento=1;
+        //el descuento es un multiplicador que uso por defecto en 1 para que quedé igua
         $total=0;
+        //total es el precio con el descuento 
         $precioFinal=0;
+        //esto es el total con los servicios e igic 
+
         
         $cantC = $_POST["cantC"];
+        //cantC es la cantidad de comensales dada en el formulario 
         if ($cantC>100) {
             $descuento=0.1;
         }elseif ($cantC>150) {
@@ -18,16 +24,17 @@ Por último presenta un presupuesto que incluye un coste del 15% por el servicio
         }elseif ($cantC<=100) {
             $descuento=1;
         };
-
+        //dependiendo de la cantidad de comensales cambio el multiplicador 
+        //para descontar 10 o 20
     function aplicaDesc($total,$descuento){
         return $total-=$total*$descuento;
-    };
+    };//funcion para obtener la diferencia y restarla al Total 
     function aplicaServ($total){
         return $total*=1.15;
-    };
+    };//funcion para aplicar el 15% de servicios
     function aplicaIGIC($total){
         return $total*=1.07;
-    };
+    };//función para aplicar el igic 
 
     switch ($_POST["menu"]) {
         case 1:
