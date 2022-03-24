@@ -29,7 +29,8 @@ class Cliente
 	}
     
 }
-class Cuenta extends Cliente{
+class Cuenta extends Cliente
+{
     protected $IBAN;
 
 	function getIBAN() {
@@ -40,6 +41,9 @@ class Cuenta extends Cliente{
 		return $this;
 	}
 }
+
+$listaCuentas = "<table border=1>";
+$cuentaEncontrada = 0;
 
 if (isset($_GET["btn1"])) {
     if(empty($_SESSION["objetos"])){
@@ -60,32 +64,30 @@ if (isset($_GET["btn1"])) {
             ->setDNI($_GET["DNI"])
             ->setIBAN($_GET["IBAN"]));
 }
-
-var_dump($_SESSION);
 }
 if(isset($_GET["btn2"])){
     if(empty($_SESSION["objetos"])) {
         echo "No hay cientes registrados".PHP_EOL."\n";
-        if(($cuenta->getDNI()==$_GET["DNI"])){
-
-        }
     }else{
-        echo "<table border=1>";
-        foreach($_SESSION["objetos"] as $value=>$cuenta){
-            echo "<tr>";
-            echo "<td>".$cuenta->getNombre(). "</td>";
-            echo "<td>".$cuenta->getApellidos(). "</td> ";
-            echo "<td>".$cuenta->getDNI(). "</td> ";
-            echo "<td>".$cuenta->getIBAN(). "</td> ";
-            echo "<td>".$value. "</td> ";
-            echo "</tr>";
+        foreach ($_SESSION["objetos"] as $index=>$cuenta) {
+            if(($cuenta->getDNI()==$_GET["DNI"])){
+                $listaCuentas .= "<tr>";
+                $listaCuentas .= "<td>".$_SESSION["objetos"][$index]->getNombre(). "</td>";
+                $listaCuentas .= "<td>".$_SESSION["objetos"][$index]->getApellidos(). "</td>";
+                $listaCuentas .= "<td>".$_SESSION["objetos"][$index]->getDNI(). "</td>";
+                $listaCuentas .= "<td>".$_SESSION["objetos"][$index]->getIBAN(). "</td>";
+                $listaCuentas .= "</tr>";
+
+                $cuentaEncontrada++;
+            }
         }
-        echo "</table>";
+        if ($cuentaEncontrada>0) {
+            echo $listaCuentas;
+        }else {
+            echo "No se encontraron cuentas del DNI indicado";
+        }
     }
-    var_dump($_SESSION);
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
