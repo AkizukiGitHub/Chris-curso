@@ -1,6 +1,31 @@
 <?php
 session_start();
-
+?>
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>E2</title>
+</head>
+<body>
+    <form action='' method='get' name='form1'>
+        <input type='text' name='nombre' placeholder='nombre'>
+        <input type='text' name='apellidos' placeholder='apellidos'>
+        <input type='text' name='DNI' placeholder='DNI'>
+        <input type='text' name='IBAN' placeholder='IBAN'>
+        <input type='submit' name='btn1' value='Registrar'>
+    </form>
+    <br><hr><br>
+    <form action='' method='get' name='form2'>
+        <input type='text' name='DNI' placeholder='DNI'>
+        <input type='submit' name='btn2' value='Buscar'>
+    </form>
+    <hr>
+</body>
+</html>
+<?php
 // inicio la sesion que se usara como base de datos
 class Cliente
 {
@@ -112,38 +137,14 @@ if(isset($_GET["btn2"])){
         // este if decide si se imprime la lista o no segun el verificador cuentaEncontrada
         if ($cuentaEncontrada>0) {
             $mensaje .=$cuentaEncontrada."<br>";
-            // echo $listaCuentas, $mensaje, "Test";
-            echo $listaCuentas;
-            // echo "<div>$mensaje</div>";
-            // echo "<p>".$mensaje."</p>";
+            echo $mensaje,$listaCuentas."</table>";
+
+
         }else {
             echo "No se encontraron cuentas del DNI indicado";
         }
     }
 }
 
-echo "<!DOCTYPE html>
-<html lang='es'>
-<head>
-    <meta charset='UTF-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>E2</title>
-</head>
-<body>
-    <form action='' method='get' name='form1'>
-        <input type='text' name='nombre' placeholder='nombre'>
-        <input type='text' name='apellidos' placeholder='apellidos'>
-        <input type='text' name='DNI' placeholder='DNI'>
-        <input type='text' name='IBAN' placeholder='IBAN'>
-        <input type='submit' name='btn1' value='Registrar'>
-    </form>
-    <br><hr><br>
-    <form action='' method='get' name='form2'>
-        <input type='text' name='DNI' placeholder='DNI'>
-        <input type='submit' name='btn2' value='Buscar'>
-    </form>
-    <hr>
-</body>
-</html>";
 ?>
+
