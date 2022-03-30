@@ -8,11 +8,13 @@ $encontre=false;
    foreach($_SESSION["usuario"] as $x){
          if (($_POST["usuario"]==$x[0])&&($_POST["clave"]==$x[1])){
             echo "Bienvenido!!!";
+            $nombrelogged=$x[0];
             $encontre=true;
             break;
          }
       }
       if(!$encontre){
+         var_dump($x);
          echo "vete por donde has venido!!!";
       }
       
