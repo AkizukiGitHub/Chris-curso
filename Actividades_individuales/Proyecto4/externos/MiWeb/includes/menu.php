@@ -16,8 +16,8 @@
     
             <div class="text-end">
               <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
+              <img src="<?php echo $destino ?>" alt="" width="100px" height="100px">
               <a href="#" class="nav-link px-2 text-white"><?php echo $nombrelogged;?></a>
-              <img src="<?php echo $imagenlogged ?>" alt="">
               <button type="button" class="btn btn-warning" onclick="window.location.href='login.php'">Login</button>
               <button type="button" class="btn btn-warning" onclick="window.location.href='registro.php'">Registro</button>
             </div> 
