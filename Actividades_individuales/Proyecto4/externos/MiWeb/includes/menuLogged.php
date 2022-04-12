@@ -4,7 +4,6 @@
        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"></a>
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="inicio.php" class="nav-link px-2 text-secondary">Inicio</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Calculadora</a></li>
               <li><a href="#" class="nav-link px-2 text-white">Servicios</a></li>
               <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
               <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
@@ -15,11 +14,7 @@
             </form> -->
     
             <div class="text-end">
-              <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
-              <img src="<?php echo $destino ?>" alt="" width="100px" height="100px">
-              <a href="#" class="nav-link px-2 text-white"><?php echo $nombrelogged;?></a>
-              <button type="button" class="btn btn-warning" onclick="window.location.href='login.php'">Login</button>
-              <button type="button" class="btn btn-warning" onclick="window.location.href='registro.php'">Registro</button>
+              <a href="#" class="nav-link px-2 text-white"><?php echo "Bienvenido ".$nombrelogged."!!";?></a>
             </div> 
           </div>
         </div>
