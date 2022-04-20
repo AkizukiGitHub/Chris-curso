@@ -1,20 +1,19 @@
 <?php
 session_start();
-// aqui si esta creado sesion se hace un push si no esta creado se crea y añade el usuario en ambos casos
-if($_POST){
-if (empty($_SESSION["usuario"])){
-    	$_SESSION["usuario"]=[[$_POST["usuario"],$_POST["clave"],$_POST["Nhabitacion"]]];
-}else{
-    array_push($_SESSION["usuario"],[$_POST["usuario"], $_POST["clave"],$_POST["Nhabitacion"]]);
+include("includes/conexion.php");
+$sql = "INSERT INTO usuarios (usuario, clave, numHabitacion) VALUES ('$_POST[usuario]', '$_POST[clave]', '$_POST[Nhabitacion]')";
+
+if (mysqli_query($conexion, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
 }
-print_r($_SESSION["usuario"]);
-echo "Aqui te imprimo los datos del loggin para tenerlos a mano";
-// esto es para que lo puedas ver al revisar no seria parte de la pagina 
-}
+mysqli_close($conexion);
+
 include("includes/encabezado.php");
 include("includes/menuBase.php");
-// encabezados y menu aqui se usa el menu base que es el que tiene el inicio el registro el login pero no los servicios
-?>
+
+
 ?>
 <form action="logueado.php" method="post">
         <label>Usuario</label><input type="text" name="usuario" required>
