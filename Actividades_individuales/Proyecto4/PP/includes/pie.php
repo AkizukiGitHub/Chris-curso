@@ -1,13 +1,11 @@
-</div>
-<footer class="bg-light text-center text-lg-start fixed-bottom">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-dark">Chris</a>
-  </div>
-  <!-- Copyright -->
+</main>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022–2025 Prueba Practica</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidad</a></li>
+          <li class="list-inline-item"><a href="#">Terminos del servicio</a></li>
+          <li class="list-inline-item"><a href="#">Soporte Técnico</a></li>
+        </ul>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-
 </html>
