@@ -1,21 +1,26 @@
 <?php
 session_start();
-$encontre=false;
-// verificacion de si el usuario esta en la sesion y creo variable nombre y habitacion logged para usarlo 
-// mas adelante en mensajes facilmente desde la pagina
-   foreach($_SESSION["usuario"] as $x){
-         if (($_POST["usuario"]==$x[0])&&($_POST["clave"]==$x[1])){
-            $nombrelogged=$x[0];
-            $habitacionlogged=$x[2];
-            $encontre=true;
-            break;
-         }
-      }
-      if(!$encontre){
-         var_dump($x);
-         echo "vete por donde has venido!!!";
-      }
+
+$u=htmlspecialchars($_POST['usuario']);
+$c=htmlspecialchars($_POST['clave']);
+
+$sql = "SELECT usuario, clave FROM usuarios WHERE usuario='$u' AND clave='$c'";
+
+$lastquery = mysqli_query($conexion, $sql);
+
+if (mysqli_num_rows($lastquery) > 0) {
+    $_SESSION['usuario'] = $u;
+    $_SESSION['clave'] = $c;
+    header("Location: index.php");
+    echo "<h1>Bienvenido<h1>";
+}else {
+    echo "<h1>Usuario o clave incorrectos</h1>";
+    header("Location: login.php");
+    session_destroy();
+}
       
+mysqli_close($conexion);
+
 include("includes/encabezado.php");
 include("includes/menuLogged.php");
 // aqui el menu cambia ahora es el menu logged que muestra el nombre del usuario y ahora muestra servicio pero como ya esta logged no muestra iniciar sesion y login
