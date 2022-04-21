@@ -1,7 +1,12 @@
 <?php
 session_start();
 include("includes/conexion.php");
-$sql = "INSERT INTO usuarios (usuario, clave, numHabitacion) VALUES ('$_POST[usuario]', '$_POST[clave]', '$_POST[Nhabitacion]')";
+include("includes/encabezado.php");
+include("includes/menuBase.php");
+
+if (isset($_POST['btnreg'])) {
+    $sql = "INSERT INTO usuarios (usuario, clave, numHabitacion) VALUES ('$_POST[usuario]', '$_POST[clave]', '$_POST[Nhabitacion]')";    
+}
 
 if (mysqli_query($conexion, $sql)) {
     echo "New record created successfully";
@@ -10,15 +15,12 @@ if (mysqli_query($conexion, $sql)) {
 }
 mysqli_close($conexion);
 
-include("includes/encabezado.php");
-include("includes/menuBase.php");
-
 
 ?>
 <form action="logueado.php" method="post">
         <label>Usuario</label><input type="text" name="usuario" required>
         <label>clave</label><input type="text" name="clave" required>
-        <input type="submit" name="btn1">
+        <input type="submit" name="btnLogin">
 </form>
 <!-- formulario con los datos pedidos antes y que se guardaron en la sesion -->
 <center>
@@ -28,4 +30,3 @@ include("includes/menuBase.php");
 <?php
 include("includes/pie.php");
 ?>
-z

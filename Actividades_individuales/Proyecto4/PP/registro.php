@@ -9,7 +9,7 @@ include("includes/menuBase.php");
         <label>Usuario</label><input type="text" name="usuario" required>
         <label>clave</label><input type="text" name="clave" required>
         <label>Numero Habitacion</label><input type="text" name="Nhabitacion" required>
-        <input type="submit" name="btn1">
+        <input type="submit" name="btnreg">
 </form>
 <!-- formulario con los 3 campos que usamos todos estan requeridos -->
         <center>
