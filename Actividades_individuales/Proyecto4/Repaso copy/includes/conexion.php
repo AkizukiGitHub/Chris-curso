@@ -2,7 +2,7 @@
 $nombreServidor="localhost";
 $nombreUsuario="root";
 $pass="";
-$nombreBD="ferreteria";
+$nombreBD="repaso";
 
 // Crea la Conexión
 $conexion = mysqli_connect($nombreServidor, $nombreUsuario, $pass, $nombreBD);

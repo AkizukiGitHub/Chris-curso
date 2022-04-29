@@ -4,13 +4,9 @@
     //include("includes/menu.php");
 ?>
 <h1>Bienvenido</h1>
-    <form action="includes/consultar.php" method="post">
-        <label>Consulta</label><input type="text" name="email">
-        <input type="submit" name="consultar">
-    </form>
 
-    <form action="includes/mostrar_usuarios_registrados.php" method="post">
-        <input type="submit"  value="Mostrar usuarios registrados" name="mostar_usuarios">
+    <form action="includes/consultar.php" method="post">
+        <input type="submit"  value="Mostrar usuarios Santa Cruz" name="mostar_usuarios">
     </form>
 
 
