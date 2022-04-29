@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2022 a las 13:45:11
+-- Tiempo de generación: 29-04-2022 a las 14:11:35
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -63,14 +63,43 @@ INSERT INTO `clientes` (`id`, `NIF`, `nombre`, `direccion`, `CP`, `poblacion`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalles_factura`
+-- Estructura de tabla para la tabla `detalle_facturas`
 --
 
-CREATE TABLE `detalles_factura` (
-  `Id_factura` int(11) NOT NULL,
-  `codigo_producto` varchar(5) COLLATE utf8_spanish2_ci NOT NULL,
-  `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+CREATE TABLE `detalle_facturas` (
+  `id_factura` int(11) DEFAULT NULL,
+  `Codigo_producto` varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Cantidad` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `detalle_facturas`
+--
+
+INSERT INTO `detalle_facturas` (`id_factura`, `Codigo_producto`, `Cantidad`) VALUES
+(1, 'PPB-1', 25),
+(1, 'PPB-2', 50),
+(1, 'PAB-1', 100),
+(1, 'PAR-1', 65),
+(2, 'PPB-2', 50),
+(2, 'PPA-2', 100),
+(2, 'PPM-2', 120),
+(3, 'PPB-1', 250),
+(3, 'PPB-2', 300),
+(3, 'PPA-1', 250),
+(3, 'PPA-2', 300),
+(4, 'PAR-1', 352),
+(5, 'PAR-1', 220),
+(5, 'PAB-1', 500),
+(6, 'PAB-1', 300),
+(6, 'PPB-1', 300),
+(6, 'PPA-2', 400),
+(7, 'PPB-1', 100),
+(7, 'PPB-2', 200),
+(7, 'PPA-1', 250),
+(7, 'PPA-2', 300),
+(8, 'PPB-1', 100),
+(9, 'PPB-1', 100);
 
 -- --------------------------------------------------------
 
@@ -158,11 +187,11 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `detalles_factura`
+-- Indices de la tabla `detalle_facturas`
 --
-ALTER TABLE `detalles_factura`
-  ADD KEY `codigo_producto` (`codigo_producto`),
-  ADD KEY `Id_factura` (`Id_factura`);
+ALTER TABLE `detalle_facturas`
+  ADD KEY `id_factura` (`id_factura`,`Codigo_producto`),
+  ADD KEY `Codigo_producto` (`Codigo_producto`);
 
 --
 -- Indices de la tabla `facturas`
@@ -210,11 +239,11 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `detalles_factura`
+-- Filtros para la tabla `detalle_facturas`
 --
-ALTER TABLE `detalles_factura`
-  ADD CONSTRAINT `detalles_factura_ibfk_1` FOREIGN KEY (`codigo_producto`) REFERENCES `productos` (`codigo`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detalles_factura_ibfk_2` FOREIGN KEY (`Id_factura`) REFERENCES `facturas` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `detalle_facturas`
+  ADD CONSTRAINT `detalle_facturas_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `facturas` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detalle_facturas_ibfk_2` FOREIGN KEY (`Codigo_producto`) REFERENCES `productos` (`codigo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `facturas`

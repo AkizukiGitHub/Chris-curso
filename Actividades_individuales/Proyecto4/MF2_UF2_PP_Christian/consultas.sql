@@ -8,7 +8,7 @@ SELECT DISTINCT provincia FROM clientes;
 SELECT * FROM facturas WHERE Id_cliente = 1;
 
 --4) mostrar los proctudos que compro “Construcciones López S.A."
-SELECT codigo_producto FROM detalles_factura WHERE Id_cliente = 4;
+SELECT codigo_producto FROM detalle_facturas INNER JOIN facturas ON detalle_facturas.Id_factura = facturas.id AND facturas.Id_cliente like 4;
 
 --5)mostrar la fecha de la ultima compra realizada en donde la poblacion es Lucena
 SELECT * FROM facturas INNER JOIN clientes ON facturas.Id_cliente = clientes.Id HAVING poblacion LIKE "Lucena" ORDER BY Fecha LIMIT 1;
