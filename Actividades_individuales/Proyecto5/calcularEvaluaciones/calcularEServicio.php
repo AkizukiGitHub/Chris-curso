@@ -16,9 +16,10 @@ function calcularEvaluaciones($varE1, $varE2, $varPO, $varPP){
 
 $resultadoFinal=calcularEvaluaciones($varE1, $varE2, $varPO, $varPP);
 
-respuesta(200, "Tu nota es $resultadoFinal", $resultadoFinal);
+// respuesta(200, "Tu nota es $resultadoFinal", $resultadoFinal);
 
 function respuesta($status, $mensaje, $resultadoFinal){
+    header("HTTP/1.1 $status $mensaje");
     $response['status'] = $status;
     $response['mensaje'] = $mensaje;
     $response['$resultadoFinal'] = $resultadoFinal;
@@ -26,14 +27,4 @@ function respuesta($status, $mensaje, $resultadoFinal){
     $json_response = json_encode($response);
     echo $json_response;
 }
-
-
-
 ?>
-
-
-
-
-
-
-
