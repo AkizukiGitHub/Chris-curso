@@ -1,0 +1,49 @@
+
+
+# print("Hello World!")
+# print('No, I am a iron man')
+# print("Frase de ejemplo")
+
+# print("""Hello World!.
+# No, I am a iron man.
+# Frase de ejemplo.""")
+
+# print("frase 1.\n" + "frase 2.\n" + "frase 3.\n")
+
+#comentarios
+# sssdf
+
+
+# print("frase de ejemplo" *100)
+menu = "\n Cafe cortado con bocadillo de tortilla \n Cafe con bocadillo de jamon cerrano \n Cafe con bocadillo de aceite de oliva \n"
+
+print("hello, welcome to chris coffe!!!!!!!!!!")
+
+name = input("what is your name?\n")
+
+print("Hello " + name + ", thank you so much for coming today!!")
+
+print("Our menu for the day is" + menu)
+
+order = input("what would you like to have?\n")
+
+print("Ok, " + name + " your " + order + " will be ready in a moment")
+
+
+
+# name = "Chris"
+
+# print(name)
+
+# name = "Javier"
+
+# print(name)
+
+
+
+
+
+
+
+
+
