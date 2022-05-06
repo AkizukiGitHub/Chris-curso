@@ -1,9 +1,31 @@
 <?php
 header("Content-Type:application/json");
     $msj = $_GET['msj'];
-    $rot = $_GET['rot'];
+    $msjCopy = $_GET['msj'];
     $msj = str_replace("-", " ", $msj);
+
     // aqui vuelvo a reemplazar los guiones a los espacios que son realmente
+
+    //separar las palabras que llegan las palabras empiezan por un caracter y terminan por la posicion anterior a -
+    //luego con esa palabra le doy una rotacion y a envio a descifrar 
+    // luego con ese mensaje descifrado se coompara con la base de datos y si hay resultado se va a la siguiente palabra
+
+    $msjArraySorted = sortByLegth($msjCopy);
+
+    print_r($msjArraySorted);
+
+    function sortByLegth($msj){
+        $msjArray = toArray($msj);
+        usort($msjArray, function($a, $b) {
+            return strlen($a) - strlen($b);
+        });
+        return $msjArray;
+    }
+    function toArray($msj) {
+        $array = explode("-", $msj);
+        return $array;
+    }
+
 
     function descifrar($msj,$rot){
         // for que recorre todo el mensaje separandolo en letras 
@@ -27,8 +49,8 @@ header("Content-Type:application/json");
         return $msj;
     }
 
-$msjDEC = descifrar($msj,$rot);
-    respuesta(200, "El mensaje descifrado es $msjDEC", $msjDEC);
+// $msjDEC = descifrar($msj,$rot);
+//     respuesta(200, "El mensaje descifrado es $msjDEC", $msjDEC);
 
     function respuesta($status, $mensaje, $msjDEC)
     {
