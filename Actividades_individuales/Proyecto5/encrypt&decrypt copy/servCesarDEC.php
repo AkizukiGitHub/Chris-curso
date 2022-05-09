@@ -27,7 +27,7 @@ header("Content-Type:application/json");
         }
         else 
         {
-            for ($i = 1; $i = 25 || $coincidencia == true || $validoOInvalido == true; $i++) 
+            for ($i = 1; $i == 25 || $coincidencia == true || $validoOInvalido == true; $i++) 
             {
                 $msjDecifrado = descifrar($value, $i);
                 $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado';");
