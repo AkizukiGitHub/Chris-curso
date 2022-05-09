@@ -9,8 +9,9 @@ header("Content-Type:application/json");
     //separar las palabras que llegan las palabras empiezan por un caracter y terminan por la posicion anterior a -
     //luego con esa palabra le doy una rotacion y a envio a descifrar 
     // luego con ese mensaje descifrado se coompara con la base de datos y si hay resultado se va a la siguiente palabra
-    $msjCopy = "coffee-with-milk";
+    $msjCopy = "dpggff-xjui-njml";
     $msjArraySorted = sortByLegth($msjCopy);
+    $msjArraySorted = array_reverse($msjArraySorted);
     $certeza = 0;
     $certezaNecesaria = ceil(count($msjArraySorted)*0.5);
     $rotCorrecta;
@@ -34,7 +35,7 @@ header("Content-Type:application/json");
                 {
                     $certeza++;
                     $coincidencia = true;
-                    $validoOInvalido = validateCoincidence($msjArraySorted, $i,$key,$certeza,$certezaNecesaria);
+                    $validoOInvalido = validateCoincidence($msjArraySorted,$i ,$key,$certeza,$certezaNecesaria);
                     $rotCorrecta = $i;
                     if($validoOInvalido == false){
                         $coincidencia = false;
@@ -66,6 +67,7 @@ header("Content-Type:application/json");
             include 'includes/conexion.php';
             $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjArraySorted[$key]';");
             if (mysqli_num_rows($resultado) > 0) {
+                $key++;
                 validateCoincidence($msjArraySorted[$key], $i,$key,$certeza,$certezaNecesaria);
                 
             }
