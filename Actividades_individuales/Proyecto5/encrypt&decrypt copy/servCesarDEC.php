@@ -9,45 +9,68 @@ header("Content-Type:application/json");
     //separar las palabras que llegan las palabras empiezan por un caracter y terminan por la posicion anterior a -
     //luego con esa palabra le doy una rotacion y a envio a descifrar 
     // luego con ese mensaje descifrado se coompara con la base de datos y si hay resultado se va a la siguiente palabra
-    $msjCopy = "cafe-con-leche";
+    $msjCopy = "coffee-with-milk";
     $msjArraySorted = sortByLegth($msjCopy);
-
+    $certeza = 0;
+    $certezaNecesaria = ceil(count($msjArraySorted)*0.5);
+    $rotCorrecta;
+    $validoOInvalido = false;
+    //me falta array reverse
+ 
 
     print_r($msjArraySorted);
-    $coincidencia;
+    $coincidencia = false;
 
     foreach($msjArraySorted as $key => $value) {
-        for ($i = 1; $i = 25 || $coincidencia == true; $i++) {
-            $msjDecifrado = descifrar($value, $i);
-            $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado'");
-            if (mysqli_num_rows($resultado) > 0) {
-                $coincidencia = true;
-                validateCoincidence($msjDecifrado, $i,$key);
+        if ($validoOInvalido == true) {
+        }
+        else 
+        {
+            for ($i = 1; $i = 25 || $coincidencia == true || $validoOInvalido == true; $i++) 
+            {
+                $msjDecifrado = descifrar($value, $i);
+                $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado';");
+                if (mysqli_num_rows($resultado) > 0) 
+                {
+                    $certeza++;
+                    $coincidencia = true;
+                    $validoOInvalido = validateCoincidence($msjArraySorted, $i,$key,$certeza,$certezaNecesaria);
+                    $rotCorrecta = $i;
+                    if($validoOInvalido == false){
+                        $coincidencia = false;
+                    }
+                }
             }
-            
-            
         }
     }
+    $msjDecifrado = descifrar($msj,$rotCorrecta);
+    respuesta(200, "El mensaje descifrado es $msjDecifrado y tenia una rotacion de $rotCorrecta", $msjDecifrado);
 
-    function validateCoincidence($msjDecifrado,$rot,$key) {
-        $key = $key+1;
-        for ($i = $key; $i < strlen($msjDecifrado); $i++) {
-            $letra = substr($msjDecifrado[$key], $i, 1);
-            $letra = ord($letra);
-            $letra = $letra - $rot;
-            if ($letra < 97) {
-                $letra = ($letra - 96) + 122;
+    function validateCoincidence($msjArraySorted,$rot,$key,$certeza,$certezaNecesaria){ 
+        $validoOInvalido = false;
+        if ($certeza >= $certezaNecesaria) {
+            $validoOInvalido = true;
+        }
+        else {
+            $key = $key+1;
+            for ($i = $key; $i < strlen($msjArraySorted[$key]); $i++) {
+                $letra = substr($msjArraySorted[$key], $i, 1);
+                $letra = ord($letra);
+                $letra = $letra - $rot;
+                if ($letra < 97) {
+                    $letra = ($letra - 96) + 122;
+                }
+                $letra = chr($letra);
+                $msjArraySorted[$key] = substr_replace($msjArraySorted[$key], $letra, $i, 1);
             }
-            $letra = chr($letra);
-            $msj = substr_replace($msjDecifrado, $letra, $i, 1);
-
+            include 'includes/conexion.php';
+            $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjArraySorted[$key]';");
+            if (mysqli_num_rows($resultado) > 0) {
+                validateCoincidence($msjArraySorted[$key], $i,$key,$certeza,$certezaNecesaria);
+                
+            }
         }
-        $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado'");
-        if (mysqli_num_rows($resultado) > 0) {
-            $coincidencia = true;
-            validateCoincidence($msjDecifrado, $i,$key);
-        }
-        return $msj;
+        return $validoOInvalido;
     }
     function sortByLegth($msj){
         $msjArray = toArray($msj);
@@ -61,7 +84,6 @@ header("Content-Type:application/json");
         var_dump($array);
         return $array;
     }
-
 
     function descifrar($msj,$rot){
         // for que recorre todo el mensaje separandolo en letras 
@@ -84,10 +106,6 @@ header("Content-Type:application/json");
         }
         return $msj;
     }
-
-// $msjDEC = descifrar($msj,$rot);
-//     respuesta(200, "El mensaje descifrado es $msjDEC", $msjDEC);
-
     function respuesta($status, $mensaje, $msjDEC)
     {
         header("HTTP/1.1 $status $mensaje");
