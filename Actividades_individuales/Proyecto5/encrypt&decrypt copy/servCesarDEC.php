@@ -9,8 +9,8 @@ header("Content-Type:application/json");
     //separar las palabras que llegan las palabras empiezan por un caracter y terminan por la posicion anterior a -
     //luego con esa palabra le doy una rotacion y a envio a descifrar 
     // luego con ese mensaje descifrado se coompara con la base de datos y si hay resultado se va a la siguiente palabra
-    $msj = "eqhhgg ykvj oknm";
-    $msjCopy = "eqhhgg-ykvj-oknm";
+    $msj = "friihh zlwk plon";
+    $msjCopy = "friihh-zlwk-plon";
     $msjArraySorted = sortByLegth($msjCopy);
     $msjArraySorted = array_reverse($msjArraySorted);
     $certeza = 0;
@@ -27,8 +27,8 @@ header("Content-Type:application/json");
         if ($validoOInvalido != true){
             for($i = 1; $i <= 25 && $coincidencia != true && $validoOInvalido != true; $i++){
                 $msjDecifrado = descifrar($value, $i);
-                $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado';");
-                if (mysqli_num_rows($resultado) > 0){
+                $resultado = mysqli_query($conexion, "CALL buscar_palabra('$msjDecifrado');");
+                if ($resultado == true){
                     $certeza++;
                     $coincidencia = true;
                     $validoOInvalido = validateCoincidence($msjArraySorted,$i,$key,$certeza,$certezaNecesaria);
@@ -59,13 +59,13 @@ header("Content-Type:application/json");
                 $letra = $letra - $rot;
                 if ($letra < 97) {
                     $letra = ($letra - 96) + 122;
-                }
+            }
                 $letra = chr($letra);
                 $msjArraySorted[$key] = substr_replace($msjArraySorted[$key], $letra, $i, 1);
             }
             include 'includes/conexion.php';
-            $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjArraySorted[$key]';");
-            if (mysqli_num_rows($resultado) > 0) {
+            $resultado = mysqli_query($conexion, "CALL buscar_palabra('$msjArraySorted[$key]');");
+            if ($resultado == true) {
                 $key++;
                 $certeza++;
                 $validoOInvalido = validateCoincidence($msjArraySorted, $rot,$key,$certeza,$certezaNecesaria);
