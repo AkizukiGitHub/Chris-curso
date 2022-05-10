@@ -9,33 +9,29 @@ header("Content-Type:application/json");
     //separar las palabras que llegan las palabras empiezan por un caracter y terminan por la posicion anterior a -
     //luego con esa palabra le doy una rotacion y a envio a descifrar 
     // luego con ese mensaje descifrado se coompara con la base de datos y si hay resultado se va a la siguiente palabra
-    $msjCopy = "dpggff-xjui-njml";
+    $msj = "eqhhgg ykvj oknm";
+    $msjCopy = "eqhhgg-ykvj-oknm";
     $msjArraySorted = sortByLegth($msjCopy);
     $msjArraySorted = array_reverse($msjArraySorted);
     $certeza = 0;
     $certezaNecesaria = ceil(count($msjArraySorted)*0.5);
     $rotCorrecta;
     $validoOInvalido = false;
+    $coincidencia = false;
     //me falta array reverse
  
 
     print_r($msjArraySorted);
-    $coincidencia = false;
 
     foreach($msjArraySorted as $key => $value) {
-        if ($validoOInvalido == true) {
-        }
-        else 
-        {
-            for ($i = 1; $i == 25 || $coincidencia == true || $validoOInvalido == true; $i++) 
-            {
+        if ($validoOInvalido != true){
+            for($i = 1; $i <= 25 && $coincidencia != true && $validoOInvalido != true; $i++){
                 $msjDecifrado = descifrar($value, $i);
                 $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjDecifrado';");
-                if (mysqli_num_rows($resultado) > 0) 
-                {
+                if (mysqli_num_rows($resultado) > 0){
                     $certeza++;
                     $coincidencia = true;
-                    $validoOInvalido = validateCoincidence($msjArraySorted,$i ,$key,$certeza,$certezaNecesaria);
+                    $validoOInvalido = validateCoincidence($msjArraySorted,$i,$key,$certeza,$certezaNecesaria);
                     $rotCorrecta = $i;
                     if($validoOInvalido == false){
                         $coincidencia = false;
@@ -44,17 +40,20 @@ header("Content-Type:application/json");
             }
         }
     }
+
     $msjDecifrado = descifrar($msj,$rotCorrecta);
     respuesta(200, "El mensaje descifrado es $msjDecifrado y tenia una rotacion de $rotCorrecta", $msjDecifrado);
 
     function validateCoincidence($msjArraySorted,$rot,$key,$certeza,$certezaNecesaria){ 
-        $validoOInvalido = false;
         if ($certeza >= $certezaNecesaria) {
             $validoOInvalido = true;
         }
         else {
-            $key = $key+1;
-            for ($i = $key; $i < strlen($msjArraySorted[$key]); $i++) {
+            $validoOInvalido = false;
+            if ($key != count($msjArraySorted)-1) {
+                $key = $key+1;
+            }
+            for ($i = 0; $i <= (strlen($msjArraySorted[$key])-1); $i++) {
                 $letra = substr($msjArraySorted[$key], $i, 1);
                 $letra = ord($letra);
                 $letra = $letra - $rot;
@@ -68,8 +67,8 @@ header("Content-Type:application/json");
             $resultado = mysqli_query($conexion, "SELECT * FROM palabras WHERE palabra = '$msjArraySorted[$key]';");
             if (mysqli_num_rows($resultado) > 0) {
                 $key++;
-                validateCoincidence($msjArraySorted[$key], $i,$key,$certeza,$certezaNecesaria);
-                
+                $certeza++;
+                $validoOInvalido = validateCoincidence($msjArraySorted, $rot,$key,$certeza,$certezaNecesaria);
             }
         }
         return $validoOInvalido;
