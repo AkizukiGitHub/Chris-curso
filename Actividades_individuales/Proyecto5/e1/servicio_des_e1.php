@@ -3,9 +3,8 @@ header("Content-Type:application/json");
 //Aquí van las variables
 $var1 = $_GET['palabra'];
 $var2 = (int)$_GET['clave'];
-$var1 = "KBOD";
+$var1 = "cdsdwr";
 $var2 = 3;
-
 
 function descifrar($palabra, $clave)
 {
@@ -19,7 +18,7 @@ function descifrar($palabra, $clave)
             if ($aux == chr($letra)) {
                 $letra = $letra - $clave; //Le restamos el desplazamiento
                 if ($letra < 65) { //Revisamos que no se pasa de la A
-                    $z = (($letra + 90) - 65); //Si se pasa lo devolvemos al final más el desplazamiento hecho
+                    $z = (($letra + 90) - 64); //Si se pasa lo devolvemos al final más el desplazamiento hecho
                     $resultado = $resultado . chr($z); //Convertimos el caracter
                     break;
                 } else {
