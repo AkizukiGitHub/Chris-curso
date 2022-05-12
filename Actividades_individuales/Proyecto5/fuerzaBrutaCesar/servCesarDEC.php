@@ -1,8 +1,8 @@
 <?php
 header("Content-Type:application/json");
-    $msj = $_GET['msj'];
-    $msjCopy = $_GET['msj'];
-    $msj = str_replace("-", " ", $msj);
+    // $msj = $_GET['msj'];
+    // $msjCopy = $_GET['msj'];
+    // $msj = str_replace("-", " ", $msj);
     include 'includes/conexion.php';
     // aqui vuelvo a reemplazar los guiones a los espacios que son realmente
 
