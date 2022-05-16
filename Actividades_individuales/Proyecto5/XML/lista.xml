@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno>
+        <id>1</id>
+        <nombre>Candy</nombre>
+        <curso>xml</curso>
+    </alumno>
+    <alumno>
+        <id>2</id>
+        <nombre>Ana</nombre>
+        <curso>html</curso>
+    </alumno>
+    <alumno>
+        <id>3</id>
+        <nombre>Carlos</nombre>
+        <curso>css</curso>
+    </alumno>
+</alumnos>
