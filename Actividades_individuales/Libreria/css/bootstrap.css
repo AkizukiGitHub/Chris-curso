@@ -70,7 +70,6 @@
 
   
 .btn-search, .btn-search:hover, .btn-search:focus, .btn-search:active, .btn-search.active, .open .dropdown-toggle.btn-search{
-    color: #FFFFFF;
     background-color: #EBAA20 !important;
     border-color: #EBAA20;
 }
@@ -80,7 +79,6 @@
   .btn-search:active,
   .btn-search.active,
   .open .dropdown-toggle.btn-search {
-    color: #FFFFFF;
     background-color: #FFD270;
     border-color: #EBAA20;
   }
@@ -120,7 +118,6 @@
   .btn-search:active,
   .btn-search.active,
   .open .dropdown-toggle.btn-search {
-    color: #FFFFFF;
     background-color: #FFD270;
     border-color: #EBAA20;
   }
@@ -150,4 +147,16 @@
     border-color: #EBAA20;
   }
 
+  .btn-search, .btn-search:hover, .btn-search:focus, .btn-search:active, .btn-search.active, .open .dropdown-toggle.btn-search {
+    background-color: #EBAA20 !important;
+    border-color: #EBAA20;
+}
 
+  .btn-search:hover,
+  .btn-search:focus,
+  .btn-search:active,
+  .btn-search.active,
+  .open .dropdown-toggle.btn-search {
+    background-color: #FFD270;
+    border-color: #EBAA20;
+  }

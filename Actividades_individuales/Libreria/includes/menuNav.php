@@ -13,8 +13,37 @@
                     <button class="btn-search btn !important" type="submit">Search</button>
                 </div>
             </form>
-            <div class="d-flex justify-content-end col-2">
-                <a href="logIN.php" class="btn btn-sample mr-2 mt-2 mb-2" role="button"><span class="material-symbols-outlined">account_circle</span><br><span>Identificate</span></a>
+            <div class="col-2 align-self-end">
+                <button class="btn btn-sample mr-2 mt-2 mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <span class="material-symbols-outlined">account_circle</span><br><span>Identificate</span></button>
             </div>
         </div>
     </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header pb-0 pt-1">
+            <h4 id="offcanvasRightLabel">Identificate</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <hr class="m-2">
+            <form action="">
+                <h3>Iniciar sesion</h3>
+                <div class="form-group">
+                    <label for="email"><strong>Correo:</strong></label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Escribir correo">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su informacion con otros</small>
+                </div>
+                <div class="form-group">
+                    <label for="password"><strong>Contraseña:</strong></label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                </div>
+                <button type="submit" class="btn-search btn !important">Iniciar sesion</button>    
+            </form>
+
+        </div>
+    </div>
