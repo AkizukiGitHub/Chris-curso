@@ -27,7 +27,7 @@
         </div>
         <div class="offcanvas-body">
             <hr class="m-2">
-            <form action="" style="visibility: visible;">
+            <form action="" id="logInForm" style="visibility: visible;">
                 <h3>Iniciar sesion</h3>
                 <div class="form-group">
                     <label for="email"><strong>Correo:</strong></label>
@@ -44,7 +44,7 @@
                 </div>
                 <button type="submit" class="btn-search btn w-100" style="color:#000000;">Iniciar sesion</button>    
             </form>
-            <form action="" style="visibility: hidden;">
+            <form action="" style="visibility: hidden; max-height: 0%;">
                 <h3>Registrarse</h3>
                 <div class="form-group">
                     <label for="email"><strong>Correo:</strong></label>
@@ -61,10 +61,10 @@
                 </div>
                 <button type="submit" class="btn-search btn" style="color:#000000;">Registrarse</button>
             </form>
+            <hr class="m-2">
+            <div class="text-center" id="signInButton">
+                <h3>¿Eres nuevo?</h3>
+                <button type="button" class="btn-search btn fluid" style="color:#000000;" onmouseup="mostrar_ocultar('logInForm_signInButton')">Registrate</button>
+            </div>
         </div>
     </div>
-            <hr class="m-2">
-            <div class="text-center">
-                <h3>¿Eres nuevo?</h3>
-                <button type="button" class="btn-search btn fluid" style="color:#000000;">Registrate</button>
-            </div>
