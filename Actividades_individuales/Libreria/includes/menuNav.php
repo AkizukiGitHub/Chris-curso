@@ -10,7 +10,7 @@
             <form class="form col-7">
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Buscar por autor, título, género, ISBN" aria-label="Search">
-                    <button class="btn-search btn !important" type="submit">Search</button>
+                    <button class="btn-search btn !important" type="submit" style="color:#000000;">Search</button>
                 </div>
             </form>
             <div class="col-2 align-self-end">
@@ -27,7 +27,7 @@
         </div>
         <div class="offcanvas-body">
             <hr class="m-2">
-            <form action="">
+            <form action="" style="visibility: visible;">
                 <h3>Iniciar sesion</h3>
                 <div class="form-group">
                     <label for="email"><strong>Correo:</strong></label>
@@ -42,8 +42,29 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
                 </div>
-                <button type="submit" class="btn-search btn !important">Iniciar sesion</button>    
+                <button type="submit" class="btn-search btn w-100" style="color:#000000;">Iniciar sesion</button>    
             </form>
-
+            <form action="" style="visibility: hidden;">
+                <h3>Registrarse</h3>
+                <div class="form-group">
+                    <label for="email"><strong>Correo:</strong></label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Escribir correo">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su informacion con otros</small>
+                </div>
+                <div class="form-group">
+                    <label for="password"><strong>Contraseña:</strong></label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="password"><strong>Confirmar contraseña:</strong></label>
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn-search btn" style="color:#000000;">Registrarse</button>
+            </form>
         </div>
     </div>
+            <hr class="m-2">
+            <div class="text-center">
+                <h3>¿Eres nuevo?</h3>
+                <button type="button" class="btn-search btn fluid" style="color:#000000;">Registrate</button>
+            </div>
