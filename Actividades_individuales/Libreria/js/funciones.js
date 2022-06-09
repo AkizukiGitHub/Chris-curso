@@ -1,12 +1,10 @@
-function relocate_logIN(){
-    location.href(logIN.php);
-}
-
-function mostrar_ocultar(ids){
-    var elemento = document.getElementById(ids);
+function mostrar_ocultar(string){
+    var elemento = string;
     var elementos = elemento.split("_");
+    var longitud = elementos.length;
+    
 
-    for(i=0;i<elementos.length;i++){
+    for(i=0;i<longitud;i++){
         var elemento = document.getElementById(elementos[i]);
         if(elemento.style.visibility == "hidden"){
             elemento.style.visibility = "visible";
@@ -18,3 +16,4 @@ function mostrar_ocultar(ids){
         }
     }
 }
+
