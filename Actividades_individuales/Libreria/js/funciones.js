@@ -18,9 +18,15 @@ function mostrar_ocultar(string) {
 function validar_password(password, confirm_password) {
   let igual_o_distinta = compare_password(password, confirm_password);
   if (igual_o_distinta) {
-    validar_patron(password);
+    let valio_o_invalido = validar_patron(password);
+    if (valio_o_invalido) {
+        return true;
+        }
+    else {
+        document.getElementById("errores").innerHTML = ;
+        }
   } else {
-    ("Las contraseñas no coinciden");
+    document.getElementById("errores").innerHTML = '<div class="alert alert-danger d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" width="16" height="16" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg><div><strong>Error!</strong> Las contraseñas no coinciden.</div><div>strong>Error!</strong> Las contraseñas no coinciden.</div></div>';
   }
 }
 
