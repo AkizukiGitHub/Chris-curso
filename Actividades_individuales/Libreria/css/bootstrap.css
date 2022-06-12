@@ -1,3 +1,58 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.add-to-cart { 
+  color: #000000; 
+  background-color: #ec0086; 
+  border-color: #A31766; 
+} 
+ 
+.add-to-cart:hover, 
+.add-to-cart:focus, 
+.add-to-cart:active, 
+.add-to-cart.active, 
+.open .dropdown-toggle.add-to-cart { 
+  color: #000000; 
+  background-color: #F03AA1; 
+  border-color: #A31766; 
+} 
+ 
+.add-to-cart:active, 
+.add-to-cart.active, 
+.open .dropdown-toggle.add-to-cart { 
+  background-image: none; 
+} 
+ 
+.add-to-cart.disabled, 
+.add-to-cart[disabled], 
+fieldset[disabled] .add-to-cart, 
+.add-to-cart.disabled:hover, 
+.add-to-cart[disabled]:hover, 
+fieldset[disabled] .add-to-cart:hover, 
+.add-to-cart.disabled:focus, 
+.add-to-cart[disabled]:focus, 
+fieldset[disabled] .add-to-cart:focus, 
+.add-to-cart.disabled:active, 
+.add-to-cart[disabled]:active, 
+fieldset[disabled] .add-to-cart:active, 
+.add-to-cart.disabled.active, 
+.add-to-cart[disabled].active, 
+fieldset[disabled] .add-to-cart.active { 
+  background-color: #D9017A; 
+  border-color: #A31766; 
+} 
+ 
+.add-to-cart .badge { 
+  color: #D9017A; 
+  background-color: #000000; 
+}
+
+
 
 .navbar-test{
     background-color: #6716E0;
