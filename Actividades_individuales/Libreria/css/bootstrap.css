@@ -5,9 +5,124 @@
   align-items: center;
 }
 
+.productos-container {
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.productos-container ion-icon {
+  font-size: 25px;
+  color: #0000ff;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.products-header {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid #cccccc;
+  margin: 0 auto;
+}
+
+.product-title {
+  width: 45%;
+}
+
+.price {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 30%;
+  border-bottom: 4px solid #cccccc;
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  width: 10%;
+  border-bottom: 4px solid #cccccc;
+  display: flex;
+  align-items: center;
+}
+
+.product {
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 4px solid #cccccc;
+}
+
+
+
+.cart-number {
+  font-size: 1em;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 0.5em;
+  border-radius: 40%;
+  margin-right: 0.5em;
+}
+
+.btn-cart { 
+  color: #FFFFFF; 
+  background-color: #EC0086; 
+  border-color: #A31766; 
+} 
+ 
+.btn-cart:hover, 
+.btn-cart:focus, 
+.btn-cart:active, 
+.btn-cart.active, 
+.open .dropdown-toggle.btn-cart { 
+  color: #FFFFFF; 
+  background-color: #F03AA1; 
+  border-color: #A31766; 
+} 
+ 
+.btn-cart:active, 
+.btn-cart.active, 
+.open .dropdown-toggle.btn-cart { 
+  background-image: none; 
+} 
+ 
+.btn-cart.disabled, 
+.btn-cart[disabled], 
+fieldset[disabled] .btn-cart, 
+.btn-cart.disabled:hover, 
+.btn-cart[disabled]:hover, 
+fieldset[disabled] .btn-cart:hover, 
+.btn-cart.disabled:focus, 
+.btn-cart[disabled]:focus, 
+fieldset[disabled] .btn-cart:focus, 
+.btn-cart.disabled:active, 
+.btn-cart[disabled]:active, 
+fieldset[disabled] .btn-cart:active, 
+.btn-cart.disabled.active, 
+.btn-cart[disabled].active, 
+fieldset[disabled] .btn-cart.active { 
+  background-color: #EC0086; 
+  border-color: #A31766; 
+} 
+ 
+.btn-cart .badge { 
+  color: #EC0086; 
+  background-color: #FFFFFF; 
+}
+
 
 .add-to-cart { 
-  color: #000000; 
+  color: #ffffff; 
   background-color: #ec0086; 
   border-color: #A31766; 
 } 

@@ -26,13 +26,21 @@
                     <button class="btn-search btn !important" type="submit" style="color:#000000;">Search</button>
                 </div>
             </form>
-            <div class="col-2 align-self-end">
+            <div class="col-1 align-self-end">
                 <button class="btn btn-sample mr-2 mt-2 mb-2" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <span class="material-symbols-outlined">account_circle</span><br><span>Identificate</span></button>
             </div>
+            <div class="col-1 align-self-end">
+                <button class="btn btn-cart mr-2 mt-2 mb-2" type="button">
+                    <span class="material-symbols-outlined">shopping_cart</span><div class="cart-number">0</div></button>
+            </div>
         </div>
     </nav>
+    
+    <!-- off canvas for shoppin cart -->
+  
+
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header pb-0 pt-1">
