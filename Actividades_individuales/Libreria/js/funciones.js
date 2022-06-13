@@ -1,4 +1,4 @@
-console.log("funciones.js cargado 5");
+console.log("funciones.js cargado 6");
 
 let carts = document.querySelectorAll(".add-to-cart");
 
@@ -111,8 +111,9 @@ for (let i = 0; i < carts.length; i++) {  //recorre todos los elementos de la cl
 
 function onloadCartNumbers() {
   let productNumbers = localStorage.getItem("cartNumbers");
+
   if (productNumbers) {
-    document.querySelector("btn-cart strong").textContent = productNumbers;
+    document.querySelector(".btn-cart").textContent = productNumbers;
   }
 }
 
@@ -120,17 +121,16 @@ function onloadCartNumbers() {
 function cartNumbers(products) {
   let productNumbers = localStorage.getItem("cartNumbers");
 
-  productNumbers = parseInt(productNumbers);
-
-  if (productNumbers) { //si existe el valor en el localStorage
-    localStorage.setItem("cartNumbers", productNumbers + 1);  //aumenta el valor en 1
-    document.querySelector(".btn-cart").textContent = productNumbers + 1;  //muestra el valor en el DOM
+  if (productNumbers) {
+    productNumbers = parseInt(productNumbers);
+    localStorage.setItem("cartNumbers", productNumbers + 1);
+    document.querySelector(".cart-number").textContent = productNumbers + 1;
+  } else {
+    localStorage.setItem("cartNumbers", 1);
+    document.querySelector(".cart-number").textContent = 1;
   }
-  else {  //si no existe el valor en el localStorage
-    localStorage.setItem("cartNumbers", 1);  //crea el valor en el localStorage
-    document.querySelector(".btn-cart").textContent = 1;  //muestra el valor en el DOM
-  } //fin else
-  setItems(products);  //llama a la funcion setItems
+
+  setItems(products);
 } //fin cartNumbers
 
 function setItems(products) { //funcion que guarda los productos en el localStorage
@@ -174,20 +174,46 @@ function totalCost(products) {
 function displayCart() {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
-  let productContainer = document.querySelector(".products-container");
+  let productContainer = document.querySelector(".products");
+  let cartCost = localStorage.getItem("totalCost");
 
   console.log(cartItems);
   if (cartItems && productContainer) {
     productContainer.innerHTML = "";
     Object.values(cartItems).map(item => {
+      console.log(item);
       productContainer.innerHTML += `
         <div class="product">
-          <ion-icon name="close-circle" class="close-icon" onclick="removeItem('${item.tag}')"></ion-icon>
-          <img src="${item.image}" alt="${item.name}">
+          <ion-icon name="close-circle" class="close-icon" onclick="removeItem('${item.id}')"></ion-icon>
+          <img src="${item.image}" alt="${item.name}" style="width: 150px; height: 250px;">
           <span>${item.name}</span>
-        </div>
-          `
+          <div class="price">$${item.price},00</div>
+          <div class="quantity">
+            <ion-icon class="decrese" name="arrow-back-circle" onclick="decreaseItem('${item.inCart}')"></ion-icon>
+            <span>${item.inCart}</span>
+            <ion-icon class="increase" name="arrow-forward-circle" onclick="increaseItem('${item.inCart}')"></ion-icon>
+          </div>
+          <div class="total">
+            $${item.inCart * item.price},00
+          </div>
+          </div>
+        `
     });
+
+    productContainer.innerHTML += `
+      <div class="basketTotalContainer">
+        <h4 class="basketTotalTitle">
+          Basket Total
+        <h4/>
+        <h4 class="basketTotal">
+          $${cartCost},00
+        </h4>
+      </div>
+      <div class="checkout">
+      <button class="btn-checkout w-25" name="pagar">Que dios te lo pague</button>
+      </div>
+    `;
+    // send 
   } 
 } 
 
@@ -196,10 +222,8 @@ function displayCart() {
 
 
 
-// onloadCartNumbers(); //llama a la funcion onloadCartNumbers
+onloadCartNumbers(); //llama a la funcion onloadCartNumbers
 displayCart();  //llama a la funcion displayCart
-
-
 
 
 function mostrar_ocultar(string) {

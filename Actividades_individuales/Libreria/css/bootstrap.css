@@ -5,14 +5,14 @@
   align-items: center;
 }
 
-.productos-container {
+.products-container {
   max-width: 650px;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 50px;
 }
 
-.productos-container ion-icon {
+.products ion-icon {
   font-size: 25px;
   color: #0000ff;
   margin-left: 10px;
@@ -41,28 +41,23 @@
 
 .quantity {
   width: 30%;
-  border-bottom: 4px solid #cccccc;
   display: flex;
   align-items: center;
 }
 
 .total {
   width: 10%;
-  border-bottom: 4px solid #cccccc;
   display: flex;
   align-items: center;
 }
 
 .product {
-  width: 45%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
   border-bottom: 4px solid #cccccc;
 }
-
-
 
 .cart-number {
   font-size: 1em;
@@ -72,6 +67,81 @@
   padding: 0.5em;
   border-radius: 40%;
   margin-right: 0.5em;
+}
+
+.basketTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTotalTitle {
+  width: 30%;
+}
+
+.basketTotal {
+  width: 10%;
+}
+
+.checkout {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.btn-checkout { 
+  color: #ffffff; 
+  background-color: #F03AA1; 
+  border-color: #A31766; 
+} 
+ 
+.btn-checkout:hover, 
+.btn-checkout:focus, 
+.btn-checkout:active, 
+.btn-checkout.active, 
+.open .dropdown-toggle.btn-checkout { 
+  color: #ffffff; 
+  background-color: #EC0086; 
+  border-color: #A31766; 
+} 
+ 
+.btn-checkout:active, 
+.btn-checkout.active, 
+.open .dropdown-toggle.btn-checkout { 
+  background-image: none; 
+} 
+ 
+.btn-checkout.disabled, 
+.btn-checkout[disabled], 
+fieldset[disabled] .btn-checkout, 
+.btn-checkout.disabled:hover, 
+.btn-checkout[disabled]:hover, 
+fieldset[disabled] .btn-checkout:hover, 
+.btn-checkout.disabled:focus, 
+.btn-checkout[disabled]:focus, 
+fieldset[disabled] .btn-checkout:focus, 
+.btn-checkout.disabled:active, 
+.btn-checkout[disabled]:active, 
+fieldset[disabled] .btn-checkout:active, 
+.btn-checkout.disabled.active, 
+.btn-checkout[disabled].active, 
+fieldset[disabled] .btn-checkout.active { 
+  background-color: #F03AA1; 
+  border-color: #A31766; 
+} 
+ 
+.btn-checkout .badge { 
+  color: #F03AA1; 
+  background-color: #ffffff; 
+}
+
+.btn-checkout {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-cart { 
